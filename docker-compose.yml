@@ -1,10 +1,12 @@
-version: '3.5'
+version: '3.7'
 
 services:
   frontend: 
     build: client
     ports:
-      - "80:8080"
+      - "8080:8080"
+    volumes: 
+      - ./client:/client
     networks:
       - featurechecker
   backend: 
@@ -13,6 +15,8 @@ services:
       - "5000:5000"
     links:
       - database
+    volumes: 
+      - ./backend:/backend
     networks:
       - featurechecker
   database:
