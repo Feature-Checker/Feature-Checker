@@ -1,0 +1,10 @@
+{
+  "name": "featurechecker",
+  "version": "1.0.0",
+  "repository": "https://github.com/Feature-Checker/Feature-Checker",
+  "author": "mras2303 <marek.kowalonek@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "docker-compose up"
+  }
+}

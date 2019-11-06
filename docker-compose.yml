@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  frontend: 
+    build: client
+    ports:
+      - "80:8080"
+    networks:
+      - featurechecker
+  backend: 
+    build: server
+    ports:
+      - "5000:5000"
+    links:
+      - database
+    networks:
+      - featurechecker
+  database:
+    image: mongo
+    ports:
+      - "27010:27010"
+    networks:
+      - featurechecker
+    volumes:
+      - dbdata:/data/db
+networks:
+  featurechecker:
+volumes:
+  dbdata:
