@@ -2,32 +2,38 @@ version: '3.7'
 
 services:
   frontend: 
-    build: client
+    build: ./client
     ports:
-      - "8080:8080"
+      - 8080:8080
     volumes: 
-      - ./client:/client
+      - ./client:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
     networks:
       - featurechecker
   backend: 
-    build: server
+    build: ./server
     ports:
-      - "5000:5000"
+      - 5000:5000
     links:
       - database
     volumes: 
-      - ./backend:/backend
+      - ./server:/usr/src/server
+      - node_modules_b:/usr/src/server/node_modules
     networks:
       - featurechecker
+    depends_on:
+      - database
   database:
     image: mongo
     ports:
-      - "27010:27010"
+      - 27010:27010
     networks:
       - featurechecker
     volumes:
-      - dbdata:/data/db
+      - data:/data/db
 networks:
   featurechecker:
 volumes:
-  dbdata:
+  data:
+  node_modules:
+  node_modules_b:
