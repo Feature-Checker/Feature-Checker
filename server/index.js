@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const config = require("./config");
+const axios = require('axios');
 
 mongoose.Promise = global.Promise;
 mongoose
@@ -12,8 +13,9 @@ mongoose
 const app = express();
 
 app.use(cors());
-app.use("/", (req, res) => {
-    res.status(200).send('Everything works');
+app.use("/", async (req, res) => {
+  const { data } = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
+    res.status(200).send('Everything works' + data.title);
 });
 
 app.listen(config.port, () =>
