@@ -5,6 +5,7 @@
   "author": "mras2303 <marek.kowalonek@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "docker-compose up -d"
+    "start": "docker-compose up -d",
+    "build": "docker-compose build"
   }
 }
