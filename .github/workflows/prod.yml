@@ -1,0 +1,20 @@
+name: prod deploy
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HAYUNA_HOST }}
+          username: ${{ secrets.HAYUNA_USERNAME }}
+          password: ${{ secrets.HAYUNA_PASSWORD }}
+          port: ${{ secrets.HAYUNA_PORT }}
+          script: |
+            cd /home/github
+            git pull origin master
+            docker-compose up --build -d
