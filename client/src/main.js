@@ -13,3 +13,6 @@ new Vue({
   i18n,
   render: h => h(App)
 }).$mount("#app");
+
+// TODO - Paginacja wyników - https://www.npmjs.com/package/vue-infinite-loading
+// TODO - zrobienie na 100% translacji
