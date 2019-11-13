@@ -1,21 +1,33 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-const config = require("./config");
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const mongoose = require('mongoose')
+const axios = require('axios')
+const testRoute = require('./routes/test')
 
-mongoose.Promise = global.Promise;
-mongoose
-  .connect(config.DB, { useNewUrlParser: true })
-  .then(() => console.log("Database is connected"))
-  .catch(err => console.log(`Cannot connect to the database ${err}`));
+const app = express()
+app.use(cors())
+app.use(bodyParser.json())
 
-const app = express();
+mongoose.connect('mongodb://admin:admin123@ds245018.mlab.com:45018/featurechecker')
+    .then(() => console.log('DB connected'))
+    .catch(e => console.log(e))
 
-app.use(cors());
-app.use("/", (req, res) => {
-    res.status(200).send('Everything works');
-});
+app.get('/', (req, res) => {
+    res.send('test')
+})
 
-app.listen(config.port, () =>
-  console.log(`Server is running on port: ${config.port}`)
-);
+app.use('/tests', testRoute)
+
+app.get('/random', async (req, res) => {
+    try{
+        const { data } = await axios.get('https://jsonplaceholder.typicode.com/todos/1')
+        res.send(data.title);
+    } catch(e) {
+        console.error(e)
+    }
+})
+
+app.listen(5000, err => {
+    console.log('listening on port 5000')
+})
