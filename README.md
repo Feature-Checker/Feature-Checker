@@ -9,15 +9,8 @@ or
 yarn start
 ```
 
-
-#### BACKEND
-
-```javascript
-PORT: 5000
-```
-
 #### FRONTEND
 
 ```javascript
-PORT: 8080
+http://hayuna.pl:8080
 ```
