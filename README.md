@@ -9,7 +9,7 @@ or
 yarn start
 ```
 
-#### FRONTEND
+#### APP
 
 ```javascript
 http://hayuna.pl:8080
