@@ -5,50 +5,54 @@
         <span>Logo</span>
       </div>
       <ul class="nav-links" :class="{ 'nav-active': navActive }">
-        <li><span>Menu</span></li>
-        <li><span>Menu</span></li>
-        <li><span>Menu</span></li>
-        <li><span>Menu</span></li>
+        <li>
+          <span> {{ $t("menu#1") }} </span>
+        </li>
+        <li>
+          <span> {{ $t("menu#2") }} </span>
+        </li>
+        <li>
+          <span> {{ $t("menu#3") }} </span>
+        </li>
+        <li>
+          <span> {{ $t("menu#4") }} </span>
+        </li>
       </ul>
-      <div class="select-language">
-        asd
-        <ul>
-          <li>EN</li>
-          <li>PL</li>
-        </ul>
-      </div>
+      <LanguageSwitcher />
     </div>
-    <div class="toggle-menu" @click="ToggleMenu">
+
+    <div
+      class="toggle-menu"
+      @click="ToggleMenu"
+      v-on-clickaway="NavDropdownHide"
+    >
       <i class="fas fa-bars"></i>
     </div>
   </nav>
 </template>
 
 <script>
+import LanguageSwitcher from "./LanguageSwitcher.vue";
+
+import { mixin as clickaway } from "vue-clickaway";
+
 export default {
   name: "Navigation",
+  components: {
+    LanguageSwitcher
+  },
+  mixins: [clickaway],
   data() {
     return {
-      navActive: false,
-      value: {
-        title: "EN",
-        img: "https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg"
-      },
-      options: [
-        {
-          title: "EN",
-          img: "https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg"
-        },
-        {
-          title: "PL",
-          img: "https://lipis.github.io/flag-icon-css/flags/4x3/pl.svg"
-        }
-      ]
+      navActive: false
     };
   },
   methods: {
     ToggleMenu() {
       this.navActive = !this.navActive;
+    },
+    NavDropdownHide: function() {
+      this.navActive = false;
     }
   }
 };
@@ -122,19 +126,6 @@ nav {
             }
           }
         }
-      }
-    }
-    select {
-      background: transparent;
-      border: none;
-      font-size: 1.6em;
-      color: $white;
-      font-weight: bold;
-      option {
-        background: transparent;
-      }
-      option[value="EN"] {
-        font-size: 3em;
       }
     }
   }
