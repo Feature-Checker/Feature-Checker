@@ -4,6 +4,8 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import i18n from "./i18n";
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/js/all.js";
 
 Vue.config.productionTip = false;
 
