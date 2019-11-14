@@ -10,30 +10,13 @@
         <li><span>Menu</span></li>
         <li><span>Menu</span></li>
       </ul>
-    </div>
-    <div>
-      <multiselect
-        v-model="value"
-        placeholder=""
-        label="title"
-        track-by="title"
-        :options="options"
-        :option-height="104"
-        :custom-label="customLabel"
-        :show-labels="false"
-        :preselectFirst="true"
-      >
-        <template slot="singleLabel" slot-scope="props">
-          <img class="option__image" :src="props.option.img" />
-          <span class="option__title">{{ props.option.title }}</span>
-        </template>
-        <template slot="option" slot-scope="props">
-          <img class="option__image" :src="props.option.img" />
-          <div class="option__desc">
-            <span class="option__title">{{ props.option.title }}</span>
-          </div>
-        </template>
-      </multiselect>
+      <div class="select-language">
+        asd
+        <ul>
+          <li>EN</li>
+          <li>PL</li>
+        </ul>
+      </div>
     </div>
     <div class="toggle-menu" @click="ToggleMenu">
       <i class="fas fa-bars"></i>
@@ -42,12 +25,8 @@
 </template>
 
 <script>
-import Multiselect from "vue-multiselect";
 export default {
   name: "Navigation",
-  components: {
-    Multiselect
-  },
   data() {
     return {
       navActive: false,
@@ -70,9 +49,6 @@ export default {
   methods: {
     ToggleMenu() {
       this.navActive = !this.navActive;
-    },
-    customLabel({ title, desc }) {
-      return `${title} – ${desc}`;
     }
   }
 };
@@ -84,7 +60,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  min-height: $nav-height;
+  min-height: #{$nav-height};
   .nav-content {
     width: 100%;
     display: flex;
@@ -109,7 +85,7 @@ nav {
       color: $white;
       @include max-dv {
         position: absolute;
-        top: calc($nav-height - $nav-height/2);
+        top: #{$nav-height - $nav-height/2};
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
@@ -136,7 +112,7 @@ nav {
         @include max-dv {
           visibility: visible;
           opacity: 1;
-          transform: translate(-50%, $nav-height/1.5);
+          transform: translate(-50%, #{$nav-height/1.5});
           transition: all 0.3s;
         }
         @include sm {
@@ -146,6 +122,19 @@ nav {
             }
           }
         }
+      }
+    }
+    select {
+      background: transparent;
+      border: none;
+      font-size: 1.6em;
+      color: $white;
+      font-weight: bold;
+      option {
+        background: transparent;
+      }
+      option[value="EN"] {
+        font-size: 3em;
       }
     }
   }
@@ -158,36 +147,5 @@ nav {
       display: none;
     }
   }
-}
-
-.multiselect__option {
-  display: flex !important;
-  align-items: center;
-  img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-  }
-  .option__title {
-    font-weight: normal;
-  }
-}
-.multiselect__single {
-  display: flex !important;
-  align-items: center;
-  img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-  }
-  .option__title {
-    font-size: 16px;
-    font-weight: bold;
-    color: $navy;
-  }
-}
-
-.multiselect {
-  width: 100px;
 }
 </style>
