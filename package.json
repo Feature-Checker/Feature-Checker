@@ -3,7 +3,5 @@
     "prod": "docker-compose up -d --build",
     "dev": "docker-compose -f docker-compose.dev.yml up -d --build"
   },
-  "dependencies": {
-    "vue-clickaway": "^2.2.2"
-  }
+  "dependencies": {}
 }
