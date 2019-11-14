@@ -14,4 +14,3 @@ yarn start
 ```javascript
 http://hayuna.pl:8080
 ```
-
