@@ -2,18 +2,38 @@
   <nav>
     <div class="nav-content">
       <div class="nav-logo">
-        <img src="@/assets/images/logos/example.png" alt="" />
+        <span>Logo</span>
       </div>
-      <ul
-        class="nav-links"
-        :class="{ 'nav-active': navActive }"
-        v-if="navActive"
-      >
+      <ul class="nav-links" :class="{ 'nav-active': navActive }">
         <li><span>Menu</span></li>
         <li><span>Menu</span></li>
         <li><span>Menu</span></li>
         <li><span>Menu</span></li>
       </ul>
+    </div>
+    <div>
+      <multiselect
+        v-model="value"
+        placeholder=""
+        label="title"
+        track-by="title"
+        :options="options"
+        :option-height="104"
+        :custom-label="customLabel"
+        :show-labels="false"
+        :preselectFirst="true"
+      >
+        <template slot="singleLabel" slot-scope="props">
+          <img class="option__image" :src="props.option.img" />
+          <span class="option__title">{{ props.option.title }}</span>
+        </template>
+        <template slot="option" slot-scope="props">
+          <img class="option__image" :src="props.option.img" />
+          <div class="option__desc">
+            <span class="option__title">{{ props.option.title }}</span>
+          </div>
+        </template>
+      </multiselect>
     </div>
     <div class="toggle-menu" @click="ToggleMenu">
       <i class="fas fa-bars"></i>
@@ -22,21 +42,41 @@
 </template>
 
 <script>
+import Multiselect from "vue-multiselect";
 export default {
   name: "Navigation",
+  components: {
+    Multiselect
+  },
   data() {
     return {
-      navActive: false
+      navActive: false,
+      value: {
+        title: "EN",
+        img: "https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg"
+      },
+      options: [
+        {
+          title: "EN",
+          img: "https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg"
+        },
+        {
+          title: "PL",
+          img: "https://lipis.github.io/flag-icon-css/flags/4x3/pl.svg"
+        }
+      ]
     };
   },
   methods: {
     ToggleMenu() {
       this.navActive = !this.navActive;
+    },
+    customLabel({ title, desc }) {
+      return `${title} – ${desc}`;
     }
   }
 };
 </script>
-
 <style lang="scss">
 $nav-height: 8vh;
 nav {
@@ -52,37 +92,60 @@ nav {
     align-items: center;
     justify-content: space-between;
     .nav-logo {
-      img {
-        width: 300px;
+      span {
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 2em;
       }
     }
     .nav-links {
       list-style: none;
       display: flex;
       width: 30%;
+      opacity: 1;
       justify-content: space-between;
       font-weight: bold;
       color: $white;
       @include max-dv {
         position: absolute;
-        top: $nav-height;
+        top: calc($nav-height - $nav-height/2);
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
-        transition: all 10.3s;
+        visibility: hidden;
+        transition: all 0.3s;
+      }
+      @include xs {
+        width: 70%;
+      }
+      @include sm {
+        width: 70%;
       }
       @include md {
         width: 40%;
       }
       li {
+        cursor: pointer;
         span {
           font-family: $lato;
           letter-spacing: 1px;
         }
       }
       &.nav-active {
-        opacity: 1;
-        transition: all 10.3s;
+        @include max-dv {
+          visibility: visible;
+          opacity: 1;
+          transform: translate(-50%, $nav-height/1.5);
+          transition: all 0.3s;
+        }
+        @include sm {
+          li {
+            span {
+              font-size: 1.6em;
+            }
+          }
+        }
       }
     }
   }
@@ -97,14 +160,34 @@ nav {
   }
 }
 
-// .slide-fade-enter-active,
-// .slide-fade-leave-active {
-//   transform: translate(50px, 100px);
-//   transition: all 0.3s ease;
-// }
+.multiselect__option {
+  display: flex !important;
+  align-items: center;
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  .option__title {
+    font-weight: normal;
+  }
+}
+.multiselect__single {
+  display: flex !important;
+  align-items: center;
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  .option__title {
+    font-size: 16px;
+    font-weight: bold;
+    color: $navy;
+  }
+}
 
-// .slide-fade-enter,
-// .slide-fade-leave-to {
-//   opacity: 0;
-// }
+.multiselect {
+  width: 100px;
+}
 </style>

@@ -12,6 +12,7 @@ module.exports = {
       scss: {
         prependData: `
         @import "~@/assets/styles/global/global.scss";
+        @import "~vue-multiselect/dist/vue-multiselect.min.css";
         `
       }
     }
