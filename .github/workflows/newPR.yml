@@ -1,4 +1,4 @@
-name: Move new issues into Todo
+name: Move new pull request into Todo
 
 on:
   pull_request:
