@@ -14,6 +14,8 @@ jobs:
           username: ${{ secrets.HAYUNA_USERNAME }}
           password: ${{ secrets.HAYUNA_PASSWORD }}
           port: ${{ secrets.HAYUNA_PORT }}
+          timeout: 30m
+          command_timeout: 60m  
           script: |
             cd /home/github
             git pull origin master
