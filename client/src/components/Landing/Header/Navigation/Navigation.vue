@@ -107,7 +107,11 @@ nav {
       @include md {
         @include positioningNavigation;
       }
-
+      @include xl {
+        &.wrapper {
+          margin: 0 10% 0 0;
+        }
+      }
       @include xs {
         width: 70%;
       }
@@ -160,8 +164,8 @@ nav {
       }
     }
     .language-chooser {
-      width: 10%;
       margin: 3px 0 0 0;
+      z-index: 2;
     }
   }
   .toggle-menu {

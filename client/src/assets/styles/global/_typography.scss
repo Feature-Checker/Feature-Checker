@@ -2,14 +2,57 @@ body,
 html,
 *,
 button,
-a {
+a,
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-size: 10px;
   font-family: $lato;
 }
 
-$text-size: 1.6em;
-
+$text-size: 1.6rem;
+$h1: 3.2rem;
+$h2: 2.6rem;
+$h3: 2.2rem;
+$h4: 2rem;
+$h5: 1.8rem;
+$button: 1.3em;
 span,
 p {
   font-size: $text-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $poppins;
+  color: $white;
+}
+
+h1 {
+  font-size: $h1;
+}
+
+h2 {
+  font-size: $h2;
+}
+
+h3 {
+  font-size: $h3;
+}
+
+h4 {
+  font-size: $h4;
+}
+
+h5 {
+  font-size: $h5;
+}
+
+a.btn {
+  font-size: $button;
 }

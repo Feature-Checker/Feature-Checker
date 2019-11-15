@@ -1,4 +1,11 @@
 {
+  "landingHeader": {
+    "button": "Sprawdź",
+    "subtitle": "Sprawdź wszystkie narzędzia, o których nie miałeś pojęcia",
+    "titlecolor": "najnowsze wersje",
+    "titleend": "swojego ulubionego narzędzia",
+    "titlestart": "Serwis na którym znajdziesz"
+  },
   "menu#1": "Strona Główna",
   "menu#2": "O Nas",
   "menu#3": "Kontakt",
