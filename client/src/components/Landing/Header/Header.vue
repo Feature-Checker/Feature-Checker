@@ -37,17 +37,37 @@ header {
   width: 100%;
   background: url("~@/assets/images/background/lp-header-bg.png");
   background-size: cover;
-  background-position: center -200px;
+  background-position: center -100px;
   background-repeat: no-repeat;
   position: relative;
+  @include lg {
+    height: 85vh;
+  }
+  @include xs {
+    background-position: center -50px;
+  }
+
+  @include land-sm {
+    background-position: 0px -10px;
+  }
   .header-content {
     display: flex;
     justify-content: center;
     height: calc(100vh - 8vh * 2);
+    @include land-sm {
+      align-items: center;
+    }
     .visual-side {
       flex-basis: 50%;
       position: relative;
-      @include max-dv {
+      @include max-dv($md) {
+        display: none;
+      }
+      @include land-sm {
+        display: none;
+      }
+
+      @include lg {
         display: none;
       }
       .header-layer {
@@ -60,10 +80,20 @@ header {
           position: absolute;
           top: 50px;
           left: 0px;
-          width: 65%;
+          width: 450px;
           opacity: 1;
           z-index: -1;
           transform: rotateY(180deg);
+          @include md {
+            width: 400px;
+            top: 400px;
+            left: -30px;
+          }
+          @include lg {
+            width: 500px;
+            top: 350px;
+            left: -30px;
+          }
         }
       }
     }
@@ -73,25 +103,63 @@ header {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      @include max-dv {
+      @include max-dv($md) {
         flex-basis: 100%;
         height: 70%;
         align-items: center;
       }
+      @include md {
+        flex-basis: 100%;
+        height: 50%;
+      }
+      @include lg {
+        flex-basis: 100%;
+        height: 50%;
+        align-items: center;
+      }
+      @include land-sm {
+        flex-basis: 100%;
+        height: 50%;
+        align-items: center;
+      }
       h1 {
-        @include max-dv {
+        @include max-dv($md) {
           text-align: center;
+        }
+        @include lg {
+          text-align: center;
+        }
+        @include xs {
+          font-size: calc(#{$h1} - 0.8rem);
+        }
+        @include land-sm {
+          font-size: calc(#{$h1} - 0.8rem);
         }
         span {
           font-size: $h1;
           font-family: $poppins;
           color: $hit-pink;
+          @include xs {
+            font-size: calc(#{$h1} - 0.8rem);
+          }
+          @include land-sm {
+            font-size: calc(#{$h1} - 0.8rem);
+          }
         }
       }
       h3 {
         font-weight: normal;
-        @include max-dv {
+        @include max-dv($md) {
           text-align: center;
+        }
+        @include lg {
+          text-align: center;
+        }
+        @include xs {
+          font-size: calc(#{$h3} - 0.4rem);
+        }
+        @include land-sm {
+          font-size: calc(#{$h3} - 0.4rem);
         }
       }
       .header-button.btn {

@@ -1,60 +1,66 @@
 // Small tablets and large smartphones (landscape view)
-$screen-sm-min: 400px;
+$sm: 400px;
 
 // Small tablets (portrait view)
-$screen-md-min: 768px;
+$md: 768px;
 
 // Tablets and small desktops
-$screen-lg-min: 992px;
+$lg: 992px;
 
 // Large tablets and desktops
-$screen-xl-min: 1200px;
+$xl: 1200px;
 
 // Extra Small devices
 @mixin xs {
-  @media (max-width: #{$screen-sm-min - 1}) {
+  @media (max-width: #{$sm - 1}) {
     @content;
   }
 }
 
 // Small devices
 @mixin sm {
-  @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-md-min - 1}) {
+  @media (min-width: #{$sm}) and (max-width: #{$md - 1}) {
     @content;
   }
 }
 
 // Medium devices
 @mixin md {
-  @media (min-width: #{$screen-md-min}) and (max-width: #{$screen-lg-min - 1}) {
+  @media (min-width: #{$md}) and (max-width: #{$lg - 1}) {
     @content;
   }
 }
 
 // Large devices
 @mixin lg {
-  @media (min-width: #{$screen-lg-min}) and (max-width: #{$screen-xl-min - 1}) {
+  @media (min-width: #{$lg}) and (max-width: #{$xl - 1}) {
     @content;
   }
 }
 
 // Extra large devices
 @mixin xl {
-  @media (min-width: #{$screen-xl-min}) {
+  @media (min-width: #{$xl}) {
     @content;
   }
 }
 
 // Max Devices < 768px
-@mixin max-dv {
-  @media (max-width: #{$screen-md-min}) {
+@mixin max-dv($widthMax) {
+  @media (max-width: $widthMax) {
     @content;
   }
 }
 
 // Min Devices > 768px
-@mixin min-dv {
-  @media (min-width: #{$screen-md-min + 1}) {
+@mixin min-dv($widthMin) {
+  @media (min-width: $widthMin) {
+    @content;
+  }
+}
+
+@mixin land-sm {
+  @media (max-width: 840px) and (orientation: landscape) {
     @content;
   }
 }

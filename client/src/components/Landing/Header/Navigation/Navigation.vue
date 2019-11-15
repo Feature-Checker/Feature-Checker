@@ -97,7 +97,7 @@ nav {
         justify-content: inherit;
         align-items: flex-end;
       }
-      @include max-dv {
+      @include max-dv($md) {
         @include positioningNavigation;
       }
 
@@ -121,7 +121,7 @@ nav {
       li {
         cursor: pointer;
         margin: 0 20px;
-        @include max-dv {
+        @include max-dv($md) {
           margin: 10px 0;
         }
         @include md {
@@ -136,7 +136,7 @@ nav {
         }
       }
       &.nav-active {
-        @include max-dv {
+        @include max-dv($md) {
           visibility: visible;
           opacity: 1;
           transform: translateY(#{$nav-height/4});
@@ -173,7 +173,7 @@ nav {
     font-size: 28px;
     color: $white;
     cursor: pointer;
-    @include min-dv {
+    @include min-dv($md) {
       display: none;
     }
     @include lg {
