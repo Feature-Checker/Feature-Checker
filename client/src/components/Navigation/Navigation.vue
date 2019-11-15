@@ -2,30 +2,26 @@
   <nav>
     <div class="nav-content">
       <div class="nav-logo">
-        <span>Logo</span>
+        <p>Logo</p>
+        <LanguageSwitcher class="language-chooser" />
       </div>
-      <ul class="nav-links" :class="{ 'nav-active': navActive }">
+      <ul class="nav-links wrapper" :class="{ 'nav-active': navActive }">
         <li>
-          <span> {{ $t("menu#1") }} </span>
+          <span>{{ $t("menu#1") }}</span>
         </li>
         <li>
-          <span> {{ $t("menu#2") }} </span>
+          <span>{{ $t("menu#2") }}</span>
         </li>
         <li>
-          <span> {{ $t("menu#3") }} </span>
+          <span>{{ $t("menu#3") }}</span>
         </li>
         <li>
-          <span> {{ $t("menu#4") }} </span>
+          <span>{{ $t("menu#4") }}</span>
         </li>
       </ul>
-      <LanguageSwitcher />
     </div>
 
-    <div
-      class="toggle-menu"
-      @click="ToggleMenu"
-      v-on-clickaway="NavDropdownHide"
-    >
+    <div class="toggle-menu" @click="ToggleMenu" v-on-clickaway="NavDropdownHide">
       <i class="fas fa-bars"></i>
     </div>
   </nav>
@@ -72,43 +68,66 @@ nav {
     align-items: center;
     justify-content: space-between;
     .nav-logo {
-      span {
+      display: flex;
+      align-items: center;
+      p {
         color: $white;
         text-transform: uppercase;
         letter-spacing: 3px;
         font-size: 2em;
+        margin: 0 20px 0 0;
       }
     }
     .nav-links {
       list-style: none;
       display: flex;
-      width: 30%;
+      width: 90%;
       opacity: 1;
-      justify-content: space-between;
+      justify-content: center;
       font-weight: bold;
       color: $white;
-      @include max-dv {
+      @mixin positioningNavigation {
         position: absolute;
         top: #{$nav-height - $nav-height/2};
-        left: 50%;
-        transform: translateX(-50%);
+        right: 0;
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s;
+        flex-direction: column;
+        justify-content: inherit;
+        align-items: flex-end;
       }
+      @include max-dv {
+        @include positioningNavigation;
+      }
+
+      @include lg {
+        @include positioningNavigation;
+      }
+      @include md {
+        @include positioningNavigation;
+      }
+
       @include xs {
         width: 70%;
       }
       @include sm {
         width: 70%;
       }
-      @include md {
-        width: 40%;
-      }
       li {
         cursor: pointer;
+        margin: 0 20px;
+        @include max-dv {
+          margin: 10px 0;
+        }
+        @include md {
+          margin: 10px 0;
+        }
+        @include lg {
+          margin: 10px 0;
+        }
         span {
-          font-family: $lato;
+          font-family: $open;
           letter-spacing: 1px;
         }
       }
@@ -116,7 +135,19 @@ nav {
         @include max-dv {
           visibility: visible;
           opacity: 1;
-          transform: translate(-50%, #{$nav-height/1.5});
+          transform: translateY(#{$nav-height/4});
+          transition: all 0.3s;
+        }
+        @include md {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(#{$nav-height/4});
+          transition: all 0.3s;
+        }
+        @include lg {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(#{$nav-height/4});
           transition: all 0.3s;
         }
         @include sm {
@@ -128,6 +159,10 @@ nav {
         }
       }
     }
+    .language-chooser {
+      width: 10%;
+      margin: 3px 0 0 0;
+    }
   }
   .toggle-menu {
     display: block;
@@ -136,6 +171,12 @@ nav {
     cursor: pointer;
     @include min-dv {
       display: none;
+    }
+    @include lg {
+      display: block;
+    }
+    @include md {
+      display: block;
     }
   }
 }
