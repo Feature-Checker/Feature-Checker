@@ -6,7 +6,7 @@
 
 <script>
 import Header from "@/components/Landing/Header/Header.vue";
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   components: {
