@@ -1,6 +1,15 @@
 version: '3'
 services:
+  nginx:
+    container_name: nginx
+    restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
   api:
+    container_name: api
     restart: always
     build:
       context: ./server
@@ -9,6 +18,7 @@ services:
       - /app/node_modules
       - ./server:/app
   client:
+    container_name: client
     restart: always
     build:
       context: ./client
@@ -16,5 +26,3 @@ services:
     volumes:
       - /app/node_modules
       - ./client:/app
-    ports:
-      - 8080:8080

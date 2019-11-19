@@ -6,12 +6,23 @@
 
 <script>
 import Header from "@/components/Landing/Header/Header.vue";
+import axios from 'axios'
 
 export default {
   components: {
     Header
   },
-  data: () => ({})
+  data: () => ({}),
+  mounted () {
+
+//example api request
+    
+    // axios
+    //   .get('/api/tests')
+    //   .then(results => console.log(results))
+    //   .catch(err => console.error(err))
+  }
+
 };
 </script>
 
