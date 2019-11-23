@@ -1,16 +1,22 @@
 const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const mongoose = require('mongoose')
 const repositoryRoute = require('./routes/repository')
+const db = require('./services/db')
+const middleware = require('./services/middleware')
+
+// const cron = require('node-cron')
+// const mail = require('./services/mail')
+// const testTemplate = require('./services/mailTemplates/test')
 
 const app = express()
-app.use(cors())
-app.use(bodyParser.json())
+middleware.use(app)
+db.connect();
 
-mongoose.connect('mongodb://admin:admin123@ds245018.mlab.com:45018/featurechecker')
-    .then(() => console.log('DB connected'))
-    .catch(e => console.log(e))
+/*
+cron.schedule("* * * * *", () => {
+    console.log("Running Cron Job");
+    //mail.send(testTemplate)
+});
+*/
 
 app.use('/repositories', repositoryRoute)
 
