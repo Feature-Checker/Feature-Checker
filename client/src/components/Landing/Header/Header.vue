@@ -57,6 +57,14 @@ header {
     @include land-sm {
       align-items: center;
     }
+    @include ipad(ipadp) {
+      align-items: center;
+      height: calc(100vh - 8vh * 4);
+    }
+    @include ipad(prop) {
+      align-items: center;
+      height: calc(100vh - 8vh * 5);
+    }
     .visual-side {
       flex-basis: 50%;
       position: relative;
@@ -168,12 +176,17 @@ header {
         color: $white;
         text-decoration: none;
         background: rgb(253, 163, 129);
-        background: linear-gradient(90deg, #fda381 0%, #f8717d 100%);
+        background: linear-gradient(90deg, #fda381 0%, rgb(248, 114, 125) 100%);
         text-transform: uppercase;
         font-family: $mont;
         border-radius: 30px;
         font-weight: bold;
         margin-top: 30px;
+        transition: 0.5s;
+        &:hover {
+          opacity: 0.9;
+          box-shadow: 0px 0px 21px 0px rgba(248, 114, 125, 0.49);
+        }
       }
     }
   }

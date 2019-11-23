@@ -43,9 +43,9 @@ export default {
     },
     setLocale(locale) {
       this.$i18n.locale = locale;
-      this.$router.push({
-        params: { lang: locale }
-      });
+      // this.$router.push({
+      //   params: { lang: locale }
+      // });
     }
   }
 };

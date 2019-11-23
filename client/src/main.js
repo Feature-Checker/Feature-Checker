@@ -5,6 +5,7 @@ import router from "./router";
 import store from "./store";
 import i18n from "./i18n";
 import Multiselect from "vue-multiselect";
+import VueAnalytics from "vue-analytics";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
@@ -21,6 +22,10 @@ router.beforeEach((to, from, next) => {
   // set the current language for i18n.
   i18n.locale = language;
   next();
+});
+
+Vue.use(VueAnalytics, {
+  id: "UA-153080047-1"
 });
 
 new Vue({

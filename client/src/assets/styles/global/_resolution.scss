@@ -10,6 +10,12 @@ $lg: 992px;
 // Large tablets and desktops
 $xl: 1200px;
 
+// Ipads
+$ipad-w: 768px;
+$ipad-h: 1024px;
+$ipadp-w: 1024px;
+$ipadp-h: 1366px;
+
 // Extra Small devices
 @mixin xs {
   @media (max-width: #{$sm - 1}) {
@@ -62,5 +68,28 @@ $xl: 1200px;
 @mixin land-sm {
   @media (max-width: 840px) and (orientation: landscape) {
     @content;
+  }
+}
+
+@mixin ipad($arg) {
+  @if ($arg == ipadl) {
+    @media (width: #{$ipad-h}) and (height: #{$ipad-w}) and (orientation: landscape) {
+      @content;
+    }
+  }
+  @if ($arg == ipadp) {
+    @media (width: #{$ipad-w}) and (height: #{$ipad-h}) and (orientation: portrait) {
+      @content;
+    }
+  }
+  @if ($arg == prol) {
+    @media (width: #{$ipadp-h}) and (height: #{$ipadp-w}) and (orientation: landscape) {
+      @content;
+    }
+  }
+  @if ($arg == prop) {
+    @media (width: #{$ipadp-w}) and (height: #{$ipadp-h}) and (orientation: portrait) {
+      @content;
+    }
   }
 }
