@@ -9,9 +9,9 @@ or
 yarn start
 ```
 
-#### FRONTEND
+#### DEMO
 
 ```javascript
-http://hayuna.pl:8080
+http://www.dev-release.com/
 ```
 
