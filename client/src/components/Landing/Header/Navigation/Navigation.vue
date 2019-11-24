@@ -2,7 +2,16 @@
   <nav>
     <div class="nav-content">
       <div class="nav-logo">
-        <p>Logo</p>
+        <img
+          src="@/assets/images/logo/dev-logo.svg"
+          alt=""
+          class="logo-desktop"
+        />
+        <img
+          src="@/assets/images/logo/dev-sygnet.svg"
+          alt=""
+          class="logo-mobile"
+        />
         <LanguageSwitcher class="language-chooser" />
       </div>
       <ul class="nav-links wrapper" :class="{ 'nav-active': navActive }">
@@ -74,12 +83,20 @@ nav {
     .nav-logo {
       display: flex;
       align-items: center;
-      p {
-        color: $white;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-size: 2em;
-        margin: 0 20px 0 0;
+
+      .logo-desktop {
+        width: 200px;
+        margin: 5px 20px 5px 0;
+        @include max-dv($md - 1) {
+          display: none;
+        }
+      }
+      .logo-mobile {
+        width: 35px;
+        margin: 5px 20px 5px 0;
+        @include min-dv($md) {
+          display: none;
+        }
       }
     }
     .nav-links {

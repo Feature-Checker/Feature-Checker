@@ -5,17 +5,21 @@
       <div class="header-content">
         <div class="visual-side">
           <div class="header-layer">
-            <img src="@/assets/images/utils/vectors/couple.png" alt class="couple" />
+            <img
+              src="@/assets/images/utils/vectors/couple.png"
+              alt
+              class="couple"
+            />
           </div>
         </div>
         <div class="content-side">
           <h1>
-            {{ $t('landingHeader.titlestart') }}
-            <span>{{ $t('landingHeader.titlecolor') }}</span>
-            {{ $t('landingHeader.titleend') }}
+            {{ $t("landingHeader.titlestart") }}
+            <span>{{ $t("landingHeader.titlecolor") }}</span>
+            {{ $t("landingHeader.titleend") }}
           </h1>
-          <h3>{{ $t('landingHeader.subtitle') }}</h3>
-          <a class="header-button btn" href>{{$t('landingHeader.button')}}</a>
+          <h3>{{ $t("landingHeader.subtitle") }}</h3>
+          <a class="header-button btn" href>{{ $t("landingHeader.button") }}</a>
         </div>
       </div>
     </div>
