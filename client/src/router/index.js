@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../App.vue";
+// import Home from "../App.vue";
 // import i18n from "../i18n";
+import About from "../components/Test/About.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -10,17 +11,22 @@ const routes = [
   //   redirect: `/${i18n.locale}`
   // },
   {
-    path: "/:lang",
+    path: "/",
     component: {
       render(c) {
         return c("router-view");
       }
     },
     children: [
+      // {
+      //   path: "/",
+      //   name: "home",
+      //   component: Home
+      // },
       {
-        path: "/",
-        name: "home",
-        component: Home
+        path: "about",
+        name: "about",
+        component: About
       }
     ]
   }

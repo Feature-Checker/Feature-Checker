@@ -6,22 +6,26 @@
         <LanguageSwitcher class="language-chooser" />
       </div>
       <ul class="nav-links wrapper" :class="{ 'nav-active': navActive }">
-        <li>
+        <router-link to="/" class="link-item">
           <span>{{ $t("menu#1") }}</span>
-        </li>
-        <li>
+        </router-link>
+        <router-link to="/about" class="link-item">
           <span>{{ $t("menu#2") }}</span>
-        </li>
-        <li>
+        </router-link>
+        <router-link to="/about" class="link-item">
           <span>{{ $t("menu#3") }}</span>
-        </li>
-        <li>
+        </router-link>
+        <router-link to="/about" class="link-item">
           <span>{{ $t("menu#4") }}</span>
-        </li>
+        </router-link>
       </ul>
     </div>
 
-    <div class="toggle-menu" @click="ToggleMenu" v-on-clickaway="NavDropdownHide">
+    <div
+      class="toggle-menu"
+      @click="ToggleMenu"
+      v-on-clickaway="NavDropdownHide"
+    >
       <i class="fas fa-bars"></i>
     </div>
   </nav>
@@ -118,9 +122,11 @@ nav {
       @include sm {
         width: 70%;
       }
-      li {
+      .link-item {
         cursor: pointer;
         margin: 0 20px;
+        color: $white;
+        text-decoration: none;
         @include max-dv($md) {
           margin: 10px 0;
         }
@@ -155,7 +161,7 @@ nav {
           transition: all 0.3s;
         }
         @include sm {
-          li {
+          .link-item {
             span {
               font-size: 1.6em;
             }

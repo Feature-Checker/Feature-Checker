@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header />
+    <router-view></router-view>
   </div>
 </template>
 
@@ -13,18 +14,14 @@ export default {
     Header
   },
   data: () => ({}),
-  mounted () {
-
-//example api request
-    
+  mounted() {
+    //example api request
     // axios
     //   .get('/api/tests')
     //   .then(results => console.log(results))
     //   .catch(err => console.error(err))
   }
-
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
