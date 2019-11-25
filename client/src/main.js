@@ -25,7 +25,8 @@ router.beforeEach((to, from, next) => {
 });
 
 Vue.use(VueAnalytics, {
-  id: "UA-153080047-1"
+  id: "UA-153080047-1",
+  router
 });
 
 new Vue({
