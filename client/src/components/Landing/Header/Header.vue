@@ -1,7 +1,6 @@
 <template>
   <header>
     <div class="wrapper">
-      <Navigation />
       <div class="header-content">
         <div class="visual-side">
           <div class="header-layer">
@@ -19,7 +18,7 @@
             {{ $t("landingHeader.titleend") }}
           </h1>
           <h3>{{ $t("landingHeader.subtitle") }}</h3>
-          <a class="header-button btn" href>{{ $t("landingHeader.button") }}</a>
+          <a class="btn hit-pink" href>{{ $t("landingHeader.button") }}</a>
         </div>
       </div>
     </div>
@@ -27,13 +26,7 @@
 </template>
 
 <script>
-import Navigation from "./Navigation/Navigation.vue";
-
-export default {
-  components: {
-    Navigation
-  }
-};
+export default {};
 </script>
 <style lang="scss">
 header {
@@ -44,6 +37,7 @@ header {
   background-position: center -100px;
   background-repeat: no-repeat;
   position: relative;
+  padding-top: 100px;
   @include lg {
     height: 85vh;
   }
@@ -172,24 +166,6 @@ header {
         }
         @include land-sm {
           font-size: calc(#{$h3} - 0.4rem);
-        }
-      }
-      .header-button.btn {
-        width: fit-content;
-        padding: 10px 50px;
-        color: $white;
-        text-decoration: none;
-        background: rgb(253, 163, 129);
-        background: linear-gradient(90deg, #fda381 0%, rgb(248, 114, 125) 100%);
-        text-transform: uppercase;
-        font-family: $mont;
-        border-radius: 30px;
-        font-weight: bold;
-        margin-top: 30px;
-        transition: 0.5s;
-        &:hover {
-          opacity: 0.9;
-          box-shadow: 0px 0px 21px 0px rgba(248, 114, 125, 0.49);
         }
       }
     }

@@ -1,9 +1,9 @@
 <template>
-  <nav>
+  <nav class="wrapper">
     <div class="nav-content">
       <div class="nav-logo">
         <img
-          src="@/assets/images/logo/dev-logo.svg"
+          src="@/assets/images/logo/dev-logo-white.svg"
           alt=""
           class="logo-desktop"
         />
@@ -12,9 +12,8 @@
           alt=""
           class="logo-mobile"
         />
-        <LanguageSwitcher class="language-chooser" />
       </div>
-      <ul class="nav-links wrapper" :class="{ 'nav-active': navActive }">
+      <ul class="nav-links" :class="{ 'nav-active': navActive }">
         <router-link to="/" class="link-item">
           <span>{{ $t("menu#1") }}</span>
         </router-link>
@@ -28,6 +27,7 @@
           <span>{{ $t("menu#4") }}</span>
         </router-link>
       </ul>
+      <LanguageSwitcher class="language-chooser" />
     </div>
 
     <div
@@ -69,11 +69,15 @@ export default {
 <style lang="scss">
 $nav-height: 8vh;
 nav {
+  width: 80%;
+  height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   min-height: #{$nav-height};
+  position: absolute;
+  z-index: 5;
   .nav-content {
     width: 100%;
     display: flex;
@@ -135,9 +139,14 @@ nav {
       }
       @include xs {
         width: 70%;
+        margin-top: 20px;
       }
       @include sm {
         width: 70%;
+        margin-top: 20px;
+      }
+      @include ipad(ipadl) {
+        margin-top: 20px;
       }
       .link-item {
         cursor: pointer;
@@ -189,6 +198,18 @@ nav {
     .language-chooser {
       margin: 3px 0 0 0;
       z-index: 2;
+      @include max-dv($md) {
+        margin: 3px 20px 0px 20px;
+      }
+      @include ipad(ipadp) {
+        margin: 3px 40px 0px 40px;
+      }
+      @include ipad(ipadl) {
+        margin: 3px 40px 0px 40px;
+      }
+      @include ipad(prop) {
+        margin: 3px 40px 0px 40px;
+      }
     }
   }
   .toggle-menu {

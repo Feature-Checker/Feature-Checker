@@ -1,0 +1,20 @@
+.btn {
+  width: fit-content;
+  padding: 10px 50px;
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $mont;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 30px;
+  transition: 0.5s;
+  &.hit-pink {
+    background: rgb(253, 163, 129);
+    background: linear-gradient(90deg, #fda381 0%, rgb(248, 114, 125) 100%);
+    &:hover {
+      opacity: 0.9;
+      box-shadow: 0px 0px 21px 0px rgba(248, 114, 125, 0.49);
+    }
+  }
+}
