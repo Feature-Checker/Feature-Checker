@@ -6,6 +6,15 @@
     "titleend": "swojego ulubionego narzędzia",
     "titlestart": "Serwis na którym znajdziesz"
   },
+  "landingContent": {
+    "contentChoose": {
+      "title": "Wybierz swoją ulubioną technologię",
+      "subtitle": "Jesteśmy tu dla Ciebie abyś mógł być na bieżąco z najnowszymi narzędziami. Jedynie czego potrzebujemy to abyś wybrał drogę w której czujesz się najlepiej",
+      "lastUpdated": "Ostatnio zaktualizowane",
+      "mostStars": "Najbardziej lubiane",
+      "mostDownloads": "Najwięcej pobrań"
+    }
+  },
   "menu#1": "Strona Główna",
   "menu#2": "O Nas",
   "menu#3": "Kontakt",

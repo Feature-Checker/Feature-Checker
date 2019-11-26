@@ -38,6 +38,7 @@ header {
   background-repeat: no-repeat;
   position: relative;
   padding-top: 100px;
+  margin: 0 0 50px 0;
   @include lg {
     height: 85vh;
   }

@@ -1,15 +1,18 @@
 <template>
   <div>
-    <Header></Header>
+    <landing-header></landing-header>
+    <landing-content></landing-content>
   </div>
 </template>
 
 <script>
 import Header from "./Header/Header.vue";
+import Content from "./Content/Content.vue";
 
 export default {
   components: {
-    Header
+    "landing-header": Header,
+    "landing-content": Content
   }
 };
 </script>

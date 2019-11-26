@@ -9,13 +9,11 @@ html,
 body {
   background: $white;
 }
-
+$wrapperMargin: 0 10%;
 .wrapper {
-  margin: 0 10%;
-  @include max-dv($md) {
-    margin: 0 10%;
-  }
-  @include lg {
-    margin: 0 10%;
-  }
+  margin: $wrapperMargin;
+}
+
+.boxShadow {
+  box-shadow: 0px 0px 30px -5px rgb(194, 194, 194);
 }

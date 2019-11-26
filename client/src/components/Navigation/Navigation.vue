@@ -27,7 +27,7 @@
           <span>{{ $t("menu#4") }}</span>
         </router-link>
       </ul>
-      <LanguageSwitcher class="language-chooser" />
+      <module-langSwitcher class="language-chooser" />
     </div>
 
     <div
@@ -48,7 +48,7 @@ import { mixin as clickaway } from "vue-clickaway";
 export default {
   name: "Navigation",
   components: {
-    LanguageSwitcher
+    "module-langSwitcher": LanguageSwitcher
   },
   mixins: [clickaway],
   data() {
