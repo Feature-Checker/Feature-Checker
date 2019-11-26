@@ -6,7 +6,7 @@
         {{ $t("landingContent.contentChoose.subtitle") }}
       </h4>
     </div>
-    <div class="tech-box" v-if="mobile">
+    <div class="tech-box">
       <div class="tech-item boxShadow">
         <div class="item-title frontend">
           <h2>Frontend</h2>
@@ -60,6 +60,9 @@
               </ul>
             </div>
           </div>
+        </div>
+        <div class="toggleHeight frontend">
+          <i class="far fa-arrow-alt-circle-down"></i>
         </div>
       </div>
       <div class="tech-item boxShadow">
@@ -116,6 +119,9 @@
             </div>
           </div>
         </div>
+        <div class="toggleHeight backend">
+          <i class="far fa-arrow-alt-circle-down"></i>
+        </div>
       </div>
       <div class="tech-item boxShadow">
         <div class="item-title design">
@@ -171,172 +177,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="tech-box" v-if="!mobile">
-      <div class="tech-item boxShadow">
-        <div class="item-title frontend">
-          <h2>Frontend</h2>
-        </div>
-        <div class="item-content desktop">
-          <div class="latest">
-            <div class="content-title">
-              <p>
-                {{ $t("landingContent.contentChoose.lastUpdated") }}
-              </p>
-            </div>
-            <div class="content-list">
-              <ul>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-              </ul>
-            </div>
-          </div>
-          <div class="most-stars">
-            <div class="content-title">
-              <p>
-                {{ $t("landingContent.contentChoose.mostStars") }}
-              </p>
-            </div>
-            <div class="content-list">
-              <ul>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-              </ul>
-            </div>
-          </div>
-          <div class="most-download">
-            <div class="content-title">
-              <p>
-                {{ $t("landingContent.contentChoose.mostDownloads") }}
-              </p>
-            </div>
-            <div class="content-list">
-              <ul>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tech-item boxShadow">
-        <div class="item-title backend">
-          <h2>Backend</h2>
-        </div>
-        <div class="item-content desktop">
-          <div class="latest">
-            <div class="content-title">
-              <p>
-                {{ $t("landingContent.contentChoose.lastUpdated") }}
-              </p>
-            </div>
-            <div class="content-list">
-              <ul>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-              </ul>
-            </div>
-          </div>
-          <div class="most-stars">
-            <div class="content-title">
-              <p>
-                {{ $t("landingContent.contentChoose.mostStars") }}
-              </p>
-            </div>
-            <div class="content-list">
-              <ul>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-              </ul>
-            </div>
-          </div>
-          <div class="most-download">
-            <div class="content-title">
-              <p>
-                {{ $t("landingContent.contentChoose.mostDownloads") }}
-              </p>
-            </div>
-            <div class="content-list">
-              <ul>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tech-item boxShadow">
-        <div class="item-title design">
-          <h2>Design</h2>
-        </div>
-        <div class="item-content desktop">
-          <div class="latest">
-            <div class="content-title">
-              <p>
-                {{ $t("landingContent.contentChoose.lastUpdated") }}
-              </p>
-            </div>
-            <div class="content-list">
-              <ul>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-              </ul>
-            </div>
-          </div>
-          <div class="most-stars">
-            <div class="content-title">
-              <p>
-                {{ $t("landingContent.contentChoose.mostStars") }}
-              </p>
-            </div>
-            <div class="content-list">
-              <ul>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-              </ul>
-            </div>
-          </div>
-          <div class="most-download">
-            <div class="content-title">
-              <p>
-                {{ $t("landingContent.contentChoose.mostDownloads") }}
-              </p>
-            </div>
-            <div class="content-list">
-              <ul>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-                <li><span>i</span>Tech Name</li>
-              </ul>
-            </div>
-          </div>
+        <div class="toggleHeight design">
+          <i class="far fa-arrow-alt-circle-down"></i>
         </div>
       </div>
     </div>
@@ -344,29 +186,7 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      mobile: false
-    };
-  },
-  methods: {
-    isMobile() {
-      if (screen.width <= 1024) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  },
-  mounted() {
-    if (this.isMobile()) {
-      this.mobile = true;
-    } else {
-      this.mobile = false;
-    }
-  }
-};
+export default {};
 </script>
 
 <style lang="scss">
@@ -399,6 +219,7 @@ section.choose-road {
       border-radius: 5px;
       cursor: pointer;
       position: relative;
+      transition: 0.3s;
       @include max-dv($md) {
         flex-basis: 100%;
         margin: 20px 0;
@@ -415,7 +236,7 @@ section.choose-road {
         cursor: inherit;
       }
       @include max-dv($md - 1) {
-        height: fit-content;
+        height: 350px;
       }
 
       .item-title {
@@ -461,6 +282,8 @@ section.choose-road {
         .most-stars,
         .most-download {
           height: fit-content;
+          opacity: 1;
+          transition: 0.3s;
           @include max-dv($md - 1) {
             width: 100%;
             display: flex;
@@ -502,6 +325,13 @@ section.choose-road {
             }
           }
         }
+        .most-stars,
+        .most-download {
+          @include max-dv($md - 1) {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
       }
       &:hover {
         @include min-dv($lg) {
@@ -514,6 +344,48 @@ section.choose-road {
           .item-title {
             height: 70px;
             width: 100%;
+          }
+        }
+      }
+      @include max-dv($md - 1) {
+        &:hover {
+          height: 780px;
+          .most-stars,
+          .most-download {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+      .toggleHeight {
+        display: none;
+        @include max-dv($md - 1) {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 40px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.frontend {
+            background-color: #7f53ac;
+            background-image: linear-gradient(315deg, #647dee 0%, #7f53ac 74%);
+          }
+          &.backend {
+            background-color: #045de9;
+            background-image: linear-gradient(315deg, #09c6f9 0%, #045de9 74%);
+          }
+          &.design {
+            background-color: #ee9617;
+            background-image: linear-gradient(315deg, #fe5858 0%, #ee9617 74%);
+          }
+          svg {
+            color: $white;
+            font-size: 24px;
           }
         }
       }
