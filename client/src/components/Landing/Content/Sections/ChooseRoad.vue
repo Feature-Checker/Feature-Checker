@@ -1,6 +1,6 @@
 <template>
   <section class="choose-road">
-    <div class="title-box">
+    <div class="title-box wrapper">
       <h2>{{ $t("landingContent.contentChoose.title") }}</h2>
       <h4>
         {{ $t("landingContent.contentChoose.subtitle") }}
@@ -100,6 +100,9 @@ section.chooseRoad-item {
         width: 100%;
         text-align: center;
       }
+      @include ipad(prol) {
+        width: 60%;
+      }
     }
     .tools-summary {
       width: 50%;
@@ -126,6 +129,9 @@ section.chooseRoad-item {
         width: 60%;
       }
       @include ipad(prop) {
+        width: 60%;
+      }
+      @include ipad(prol) {
         width: 60%;
       }
       .summary-item {
@@ -215,6 +221,9 @@ section.chooseRoad-item {
           width: 60%;
         }
         @include ipad(prop) {
+          width: 60%;
+        }
+        @include ipad(prol) {
           width: 60%;
         }
       }
