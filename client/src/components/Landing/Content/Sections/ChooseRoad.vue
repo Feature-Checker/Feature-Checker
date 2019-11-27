@@ -32,6 +32,9 @@ section.choose-road {
   min-height: 100vh;
   .title-box {
     margin-bottom: 50px;
+    h2 {
+      font-size: 3em;
+    }
     h2,
     h4 {
       color: $navy;
@@ -63,13 +66,23 @@ section.chooseRoad-item {
     }
     h2 {
       font-size: 32px;
-      color: $navy;
+      color: $froly;
       font-family: $mont;
       @include max-dv($md - 1) {
         text-align: center;
       }
       @include ipad(ipadp) {
         text-align: center;
+      }
+    }
+    &.backend {
+      h2 {
+        color: $sunglow;
+      }
+    }
+    &.design {
+      h2 {
+        color: $azure;
       }
     }
     span {

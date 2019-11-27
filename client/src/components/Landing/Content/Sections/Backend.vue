@@ -1,5 +1,5 @@
 <template>
-  <section class="chooseRoad-item right" :class="{ active: isActive }">
+  <section class="chooseRoad-item right backend" :class="{ active: isActive }">
     <div class="wrapper">
       <div class="title">
         <h2>Backend</h2>
