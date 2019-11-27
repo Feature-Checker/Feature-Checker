@@ -39,3 +39,4 @@ new Vue({
 
 // TODO - Paginacja wyników - https://www.npmjs.com/package/vue-infinite-loading
 // TODO - zrobienie na 100% translacji
+// TODO - Przygotować modal na Cookies

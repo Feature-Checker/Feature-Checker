@@ -31,7 +31,7 @@ $itemContentPadding: 10px;
 section.choose-road {
   min-height: 100vh;
   .title-box {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     h2 {
       font-size: 3em;
     }
@@ -64,6 +64,7 @@ section.chooseRoad-item {
     @include ipad(ipadp) {
       height: 300px;
     }
+
     h2 {
       font-size: 32px;
       color: $froly;
@@ -121,6 +122,12 @@ section.chooseRoad-item {
       @include ipad(ipadp) {
         width: 100%;
       }
+      @include ipad(ipadl) {
+        width: 60%;
+      }
+      @include ipad(prop) {
+        width: 60%;
+      }
       .summary-item {
         margin-top: 20px;
         @include max-dv($md - 1) {
@@ -170,6 +177,12 @@ section.chooseRoad-item {
       @include max-dv($lg) {
         display: none;
       }
+      @include ipad(ipadl) {
+        width: 400px;
+      }
+      @include ipad(prop) {
+        width: 400px;
+      }
     }
   }
   &.right {
@@ -198,6 +211,12 @@ section.chooseRoad-item {
         @include ipad(ipadp) {
           width: 100%;
         }
+        @include ipad(ipadl) {
+          width: 60%;
+        }
+        @include ipad(prop) {
+          width: 60%;
+        }
       }
     }
     .item-title {
@@ -210,15 +229,8 @@ section.chooseRoad-item {
       }
     }
     img {
-      display: inherit;
-      position: absolute;
       top: -80px;
       left: 0;
-      transform: rotateY(180deg);
-      width: 500px;
-      @include max-dv($lg) {
-        display: none;
-      }
     }
   }
   span.toggleHeight {
