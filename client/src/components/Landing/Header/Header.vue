@@ -145,7 +145,7 @@ header {
         span {
           font-size: $h1;
           font-family: $poppins;
-          color: $hit-pink;
+          color: $hitPink;
           @include xs {
             font-size: calc(#{$h1} - 0.8rem);
           }

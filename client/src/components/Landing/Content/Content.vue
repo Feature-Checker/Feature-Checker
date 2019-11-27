@@ -1,5 +1,5 @@
 <template>
-  <main class="wrapper">
+  <main>
     <section-chooseRoad></section-chooseRoad>
   </main>
 </template>
