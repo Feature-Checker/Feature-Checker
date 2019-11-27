@@ -85,6 +85,10 @@ section.chooseRoad-item {
       h2 {
         color: $azure;
       }
+      img {
+        transform: rotateY(0);
+        right: 20px;
+      }
     }
     span {
       display: block;
@@ -179,7 +183,7 @@ section.chooseRoad-item {
       top: -30px;
       right: 0;
       transform: rotateY(180deg);
-      width: 500px;
+      width: 600px;
       @include max-dv($lg) {
         display: none;
       }
@@ -188,6 +192,9 @@ section.chooseRoad-item {
       }
       @include ipad(prop) {
         width: 400px;
+      }
+      @include ipad(prol) {
+        width: 500px;
       }
     }
   }
