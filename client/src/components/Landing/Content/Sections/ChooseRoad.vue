@@ -2,7 +2,11 @@
   <section class="choose-road">
     <div class="title-box wrapper">
       <h2>{{ $t("landingContent.contentChoose.title") }}</h2>
-      <h4>{{ $t("landingContent.contentChoose.subtitle") }}</h4>
+      <h4>
+        {{ $t("landingContent.contentChoose.subtitle") }}
+        <br />
+        {{ $t("landingContent.contentChoose.subtitle2") }}
+      </h4>
     </div>
     <section-Frontend></section-Frontend>
     <section-Backend></section-Backend>
@@ -45,9 +49,6 @@ section.choose-road {
       font-size: 16px;
       font-weight: 400;
       margin: 20px 0 0 0;
-      @include xl {
-        width: 37%;
-      }
     }
   }
 }

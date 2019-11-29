@@ -9,7 +9,8 @@
   "landingContent": {
     "contentChoose": {
       "title": "Wybierz swoją ścieżkę",
-      "subtitle": "Jesteśmy tu dla Ciebie abyś mógł być na bieżąco z najnowszymi narzędziami. Jedynie czego potrzebujemy to abyś wybrał drogę w której czujesz się najlepiej",
+      "subtitle": "Jesteśmy tu dla Ciebie abyś mógł być na bieżąco z najnowszymi narzędziami.",
+      "subtitle2": "Jedynie czego potrzebujemy to abyś wybrał drogę w której czujesz się najlepiej",
       "lastUpdated": "Ostatnio zaktualizowane",
       "mostStars": "Najbardziej lubiane",
       "mostDownloads": "Najwięcej pobrań"
