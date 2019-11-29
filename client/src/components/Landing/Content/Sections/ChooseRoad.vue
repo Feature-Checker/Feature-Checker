@@ -2,9 +2,7 @@
   <section class="choose-road">
     <div class="title-box wrapper">
       <h2>{{ $t("landingContent.contentChoose.title") }}</h2>
-      <h4>
-        {{ $t("landingContent.contentChoose.subtitle") }}
-      </h4>
+      <h4>{{ $t("landingContent.contentChoose.subtitle") }}</h4>
     </div>
     <section-Frontend></section-Frontend>
     <section-Backend></section-Backend>
@@ -13,9 +11,9 @@
 </template>
 
 <script>
-import Frontend from "./Frontend.vue";
-import Backend from "./Backend.vue";
-import Design from "./Design.vue";
+import Frontend from "./ChooseRoadItems/Frontend.vue";
+import Backend from "./ChooseRoadItems/Backend.vue";
+import Design from "./ChooseRoadItems/Design.vue";
 export default {
   components: {
     "section-Frontend": Frontend,
@@ -32,6 +30,9 @@ section.choose-road {
   min-height: 100vh;
   .title-box {
     margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h2 {
       font-size: 3em;
     }
@@ -44,6 +45,9 @@ section.choose-road {
       font-size: 16px;
       font-weight: 400;
       margin: 20px 0 0 0;
+      @include xl {
+        width: 37%;
+      }
     }
   }
 }
@@ -69,8 +73,10 @@ section.chooseRoad-item {
       font-size: 32px;
       color: $froly;
       font-family: $mont;
+      margin-bottom: 10px;
       @include max-dv($md - 1) {
         text-align: center;
+        margin-bottom: 0;
       }
       @include ipad(ipadp) {
         text-align: center;
@@ -93,7 +99,7 @@ section.chooseRoad-item {
     span {
       display: block;
       width: 50%;
-      font-size: 14px;
+      font-size: 1.6em;
       color: $navy;
       opacity: 0.8;
       @include max-dv($md - 1) {
@@ -149,7 +155,7 @@ section.chooseRoad-item {
 
         p {
           font-family: $mont;
-          font-weight: 500;
+          font-weight: 600;
           margin-bottom: 10px;
           position: relative;
           svg {

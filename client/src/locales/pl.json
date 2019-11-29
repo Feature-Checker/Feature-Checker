@@ -13,10 +13,15 @@
       "lastUpdated": "Ostatnio zaktualizowane",
       "mostStars": "Najbardziej lubiane",
       "mostDownloads": "Najwięcej pobrań"
+    },
+    "feedbackForm": {
+      "title": "Masz nam coś ciekawego do przekazania?",
+      "subtitle": "Send us your ideas"
     }
   },
   "menu#1": "Strona Główna",
   "menu#2": "O Nas",
   "menu#3": "Kontakt",
-  "menu#4": "Wesprzyj Nas"
+  "menu#4": "Wesprzyj Nas",
+  "buttonCheck": "Sprawdź"
 }

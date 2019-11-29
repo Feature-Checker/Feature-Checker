@@ -4,11 +4,7 @@
       <div class="header-content">
         <div class="visual-side">
           <div class="header-layer">
-            <img
-              src="@/assets/images/utils/vectors/couple.png"
-              alt
-              class="couple"
-            />
+            <img src="@/assets/images/utils/vectors/couple.png" alt class="couple" />
           </div>
         </div>
         <div class="content-side">
@@ -17,7 +13,7 @@
             <span>{{ $t("landingHeader.titlecolor") }}</span>
             {{ $t("landingHeader.titleend") }}
           </h1>
-          <h3>{{ $t("landingHeader.subtitle") }}</h3>
+          <h4>{{ $t("landingHeader.subtitle") }}</h4>
           <a class="btn hit-pink" href>{{ $t("landingHeader.button") }}</a>
         </div>
       </div>
@@ -154,7 +150,7 @@ header {
           }
         }
       }
-      h3 {
+      h4 {
         font-weight: normal;
         @include max-dv($md) {
           text-align: center;
@@ -168,6 +164,9 @@ header {
         @include land-sm {
           font-size: calc(#{$h3} - 0.4rem);
         }
+      }
+      .btn {
+        margin-top: 30px;
       }
     }
   }

@@ -13,10 +13,15 @@
       "lastUpdated": "Last updated",
       "mostStars": "Most liked",
       "mostDownloads": "Most downloads"
+    },
+    "feedbackForm": {
+      "title": "You have something interesting to say?",
+      "subtitle": "Send us your ideas"
     }
   },
   "menu#1": "Home",
   "menu#2": "About",
   "menu#3": "Contact",
-  "menu#4": "Donate"
+  "menu#4": "Donate",
+  "buttonCheck": "Check"
 }
