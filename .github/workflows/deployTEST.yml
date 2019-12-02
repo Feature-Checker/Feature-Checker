@@ -18,6 +18,6 @@ jobs:
           command_timeout: 60m  
           script: |
             cd /home/test
-            git pull origin master
+            git pull origin test
             docker-compose down -v
             docker-compose up --build -d
