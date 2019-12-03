@@ -1,29 +1,25 @@
 version: '3'
 services:
-  nginx:
-    container_name: nginx
-    restart: always
+  server:
     build:
-      context: ./nginx
-      dockerfile: Dockerfile
+      context: ./server
+    command: node src/server.js
+    container_name: PROD_api
+    environment:
+      - PORT=4001
+      - VIRTUAL_HOST=2000
+    ports:
+      - 4001:4000
+    restart: always
+    volumes:
+      - ./server/src:/app/server/src
+  client:
+    build:
+      context: ./client
+    container_name: PROD_client
+    links:
+      - server
     ports:
       - 80:80
       - 443:443
-  api:
-    container_name: api
     restart: always
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    volumes:
-      - /app/node_modules
-      - ./server:/app
-  client:
-    container_name: client
-    restart: always
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    volumes:
-      - /app/node_modules
-      - ./client:/app

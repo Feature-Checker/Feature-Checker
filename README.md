@@ -12,6 +12,22 @@ yarn start
 #### DEMO
 
 ```javascript
-http://www.dev-release.com/
+PROD https://dev-release.com
+TEST https://dev-release.com:70
 ```
 
+
+
+#### TO UPDATE TEST ENVIRONMENT
+
+```javascript
+push to test branch
+```
+
+
+
+#### TO UPDATE PROD ENVIRONMENT
+
+```
+push to master branch
+```
