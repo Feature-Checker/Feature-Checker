@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+  TEST ENV
     <Navigation></Navigation>
     <router-view></router-view>
   </div>
@@ -7,7 +8,7 @@
 
 <script>
 import Navigation from "@/components/Navigation/Navigation.vue";
-//import axios from 'axios'
+import axios from 'axios'
 
 export default {
   components: {
@@ -16,10 +17,10 @@ export default {
   data: () => ({}),
   mounted() {
     //example api request
-    //    axios
-    //      .get('/api/repositories')
-    //      .then(results => console.log(results))
-    //      .catch(err => console.error(err))
+        axios
+          .get('/api/repositories')
+          .then(results => console.log(results))
+          .catch(err => console.error(err))
   }
 };
 </script>
