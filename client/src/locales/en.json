@@ -15,9 +15,13 @@
       "mostStars": "Most liked",
       "mostDownloads": "Most downloads"
     },
-    "feedbackForm": {
-      "title": "You have something interesting to say?",
-      "subtitle": "Send us your ideas"
+    "popularTech": {
+      "title": "Find most popular technology in world",
+      "subtitle": "Check what is most powerful in every programming path",
+      "toolCounter": "Tools: ",
+      "frontend": {
+        "javascriptDesc": "JavaScript is a scripting programming language created in the 90's by Brendan Eich and Netscape. It is a language used on websites. The scripts themselves are responsible for interactivity by responding to events, checking forms or creating elements for navigation."
+      }
     }
   },
   "menu#1": "Home",

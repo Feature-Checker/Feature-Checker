@@ -15,9 +15,13 @@
       "mostStars": "Najbardziej lubiane",
       "mostDownloads": "Najwięcej pobrań"
     },
-    "feedbackForm": {
-      "title": "Masz nam coś ciekawego do przekazania?",
-      "subtitle": "Send us your ideas"
+    "popularTech": {
+      "title": "Znajdź najbardziej popularne technologie na świecie",
+      "subtitle": "Sprawdź co jest napotężniejsze w każdej z dziedzin programowania",
+      "toolCounter": "Narzędzia: ",
+      "frontend": {
+        "javascriptDesc": "JavaScript jest skryptowym językiem programowania, stworzonym w latach 90-tych przez Brendana Eicha i firmę Netscape. Jest to język wykorzystywany na stronach WWW. Same skrypty odpowiadają za interaktywność poprzez reagowanie na zdarzenia, sprawdzanie formularzy czy za tworzenie elementów służących do nawigacji."
+      }
     }
   },
   "menu#1": "Strona Główna",

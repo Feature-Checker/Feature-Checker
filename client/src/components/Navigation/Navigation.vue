@@ -1,15 +1,15 @@
 <template>
-  <nav class="wrapper">
+  <nav class="wrapper landingNavigation">
     <div class="nav-content">
       <div class="nav-logo">
         <img
           src="@/assets/images/logo/dev-logo-white.svg"
-          alt=""
+          alt
           class="logo-desktop"
         />
         <img
           src="@/assets/images/logo/dev-sygnet.svg"
-          alt=""
+          alt
           class="logo-mobile"
         />
       </div>
@@ -68,7 +68,7 @@ export default {
 </script>
 <style lang="scss">
 $nav-height: 8vh;
-nav {
+nav.landingNavigation {
   width: 80%;
   height: 100px;
   display: flex;

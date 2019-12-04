@@ -8,12 +8,21 @@
   border-radius: 30px;
   font-weight: bold;
   transition: 0.5s;
+  border: none;
   &.hit-pink {
     background: rgb(253, 163, 129);
     background: linear-gradient(90deg, #fda381 0%, rgb(248, 114, 125) 100%);
     &:hover {
       opacity: 0.9;
       box-shadow: 0px 0px 21px 0px rgba(248, 114, 125, 0.49);
+    }
+  }
+  &.purple {
+    background: #864dd9;
+    background: linear-gradient(90deg, #9255ee 0%, #7127ac 100%);
+    &:hover {
+      opacity: 0.9;
+      box-shadow: 0px 0px 21px 0px rgba(146, 85, 238, 0.5);
     }
   }
 }
