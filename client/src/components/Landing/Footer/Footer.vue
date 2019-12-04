@@ -18,7 +18,7 @@
         </div>
         <div class="footer-nav">
           <nav class="footer-item">
-            <h2>Frontend</h2>
+            <h3>Frontend</h3>
             <ul>
               <li v-for="item in frontendItems" :key="item.title">
                 {{ item.title }}
@@ -26,7 +26,7 @@
             </ul>
           </nav>
           <nav class="footer-item">
-            <h2>Backend</h2>
+            <h3>Backend</h3>
             <ul>
               <li v-for="item in backendItems" :key="item.title">
                 {{ item.title }}
@@ -34,7 +34,7 @@
             </ul>
           </nav>
           <nav class="footer-item">
-            <h2>Design</h2>
+            <h3>Design</h3>
             <ul>
               <li v-for="item in designItems" :key="item.title">
                 {{ item.title }}
@@ -111,7 +111,6 @@ export default {
 
 <style lang="scss">
 footer {
-  display: none;
   background: rgb(207, 83, 249);
   background: linear-gradient(
     45deg,
@@ -119,17 +118,32 @@ footer {
     rgba(87, 64, 252, 1) 100%
   );
   margin-top: 100px;
-  padding: 50px 0;
+  padding: 30px 0;
   height: fit-content;
-
   .footer-box {
     display: flex;
     justify-content: space-between;
+    @include max-dv($md - 1) {
+      flex-direction: column;
+    }
+    @include min-dv($md) {
+      flex-direction: column;
+    }
+    @include min-dv($lg) {
+      flex-direction: row;
+    }
     .footer-brand {
       position: relative;
       height: fit-content;
+      width: fit-content;
+      margin: 0 auto;
+      @include min-dv($lg) {
+        margin: 0;
+      }
       img {
         width: 200px;
+        display: block;
+        margin: 0 auto;
       }
       span {
         font-size: 1.2em;
@@ -138,6 +152,15 @@ footer {
         right: 5px;
         color: $lola;
         font-family: $poppins;
+        @include max-dv($md - 1) {
+          right: 0;
+        }
+        @include min-dv($md) {
+          right: 0;
+        }
+        @include min-dv($lg) {
+          right: 5px;
+        }
       }
     }
     // .footer-stats {
@@ -159,9 +182,31 @@ footer {
     // }
     .footer-nav {
       display: flex;
+      @include max-dv($md - 1) {
+        flex-wrap: wrap;
+        justify-content: center;
+        display: none;
+      }
+      @include min-dv($md) {
+        justify-content: center;
+        margin-top: 20px;
+      }
+      @include min-dv($lg) {
+        margin-top: 0;
+      }
       .footer-item {
         width: 200px;
-        h2 {
+        @include max-dv($md - 1) {
+          width: fit-content;
+          display: flex;
+          flex-direction: column;
+          width: 40%;
+        }
+        @include min-dv($md) {
+          width: fit-content;
+          margin: 0 20px;
+        }
+        h3 {
           color: $white;
           font-family: $mont;
         }
@@ -169,7 +214,7 @@ footer {
           list-style: none;
           li {
             color: $white;
-            font-size: 1.6em;
+            font-size: 1.2em;
             margin: 5px 0;
             font-family: $mont;
             font-weight: 500;

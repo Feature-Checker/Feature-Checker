@@ -75,6 +75,9 @@ section.popularTechnology {
     }
     .tech-box {
       margin-top: 20px;
+      @include max-dv($md - 1) {
+        margin-top: 0px;
+      }
       .tech-item {
         display: flex;
         flex-direction: column;
@@ -85,7 +88,7 @@ section.popularTechnology {
         border-radius: 5px;
         padding: 15px 20px;
         @include max-dv($md - 1) {
-          width: 80%;
+          width: 100%;
           margin: 10px auto;
         }
         @include min-dv($md - 1) {
@@ -99,6 +102,9 @@ section.popularTechnology {
         @include ipad(ipadp) {
           width: 90%;
           margin: 10px auto;
+        }
+        @include land-sm {
+          width: 90%;
         }
         img {
           width: 100px;
