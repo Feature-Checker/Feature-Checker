@@ -111,6 +111,7 @@ export default {
 
 <style lang="scss">
 footer {
+  display: none;
   background: rgb(207, 83, 249);
   background: linear-gradient(
     45deg,

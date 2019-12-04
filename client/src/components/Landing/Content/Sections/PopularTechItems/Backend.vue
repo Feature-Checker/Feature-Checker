@@ -8,20 +8,36 @@
       </div>
     </div>
     <div class="tech-box">
-      <div class="tech-item" v-for="item in techItem" :key="item.title">
-        <img :src="item.image" alt="" />
-        <p>{{ item.title }}</p>
-        <span>{{ item.description }}</span>
-        <button class="btn purple">
-          {{ $t("buttonCheck") }}
-        </button>
-      </div>
+      <carousel
+        :items="3"
+        :loop="true"
+        :nav="true"
+        :autoplay="false"
+        :autoplayHoverPause="true"
+        :responsive="{
+          0: { items: 1, nav: false },
+          600: { items: 2, nav: false },
+          1100: { items: 3, nav: true }
+        }"
+      >
+        <div class="tech-item" v-for="item in techItem" :key="item.title">
+          <img :src="item.image" alt="" />
+          <p>{{ item.title }}</p>
+          <span>{{ item.description }}</span>
+          <button class="btn purple">
+            {{ $t("buttonCheck") }}
+          </button>
+        </div>
+      </carousel>
     </div>
   </section>
 </template>
 
 <script>
+import carousel from "vue-owl-carousel";
+
 export default {
+  components: { carousel },
   data() {
     return {
       // TODO - Dynamic translation issue https://github.com/Feature-Checker/Feature-Checker/issues/17

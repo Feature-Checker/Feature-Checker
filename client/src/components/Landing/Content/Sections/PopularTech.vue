@@ -52,7 +52,8 @@ section.popularTechnology {
     }
   }
   .frontend,
-  .backend {
+  .backend,
+  .design {
     margin: 40px 0;
     .title {
       display: flex;
@@ -73,21 +74,19 @@ section.popularTechnology {
       }
     }
     .tech-box {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 15px;
+      margin-top: 20px;
       .tech-item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: calc(20% - 20px);
+        width: 90%;
         margin: 0 10px;
         border: 1px solid $gray;
         border-radius: 5px;
         padding: 15px 20px;
         @include max-dv($md - 1) {
-          width: 100%;
-          margin: 10px 0;
+          width: 80%;
+          margin: 10px auto;
         }
         @include min-dv($md - 1) {
           &:first-child {
@@ -98,8 +97,8 @@ section.popularTechnology {
           }
         }
         @include ipad(ipadp) {
-          width: calc(50% - 20px);
-          margin: 10px 10px;
+          width: 90%;
+          margin: 10px auto;
         }
         img {
           width: 100px;
@@ -121,6 +120,39 @@ section.popularTechnology {
           margin-top: 10px;
           cursor: pointer;
         }
+      }
+    }
+    .owl-next,
+    .owl-prev {
+      background: transparent;
+      color: $navy;
+      position: absolute;
+      &:hover {
+        background: transparent;
+        color: $navy;
+      }
+      svg {
+        font-size: 40px;
+      }
+    }
+    .owl-next {
+      top: 45%;
+      right: -30px;
+      transform: translateY(-50%);
+    }
+    .owl-prev {
+      top: 45%;
+      left: -70px;
+      transform: translateY(-50%);
+    }
+    .owl-dot {
+      &.active {
+        span {
+          background: $hitPink;
+        }
+      }
+      span {
+        background: $navy;
       }
     }
   }
