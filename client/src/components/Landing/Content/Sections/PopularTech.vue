@@ -120,7 +120,7 @@ section.popularTechnology {
         span {
           font-family: $open;
           text-align: center;
-          font-size: 1.4em;
+          font-size: 1.3em;
         }
         button {
           margin-top: 10px;

@@ -15,6 +15,9 @@ export default {
     "landing-header": Header,
     "landing-content": Content,
     "landing-footer": Footer
+  },
+  created() {
+    document.title = "Dev Release | Homepage";
   }
 };
 </script>
