@@ -79,6 +79,16 @@ export default {
         }
       ]
     };
+  },
+  mounted: function() {
+    const next = document.querySelector(".backend .owl-next");
+    const prev = document.querySelector(".backend .owl-prev");
+    next.innerHTML = `
+    <i class="fas fa-chevron-right"></i>
+    `;
+    prev.innerHTML = `
+    <i class="fas fa-chevron-left"></i>
+    `;
   }
 };
 </script>
