@@ -31,3 +31,18 @@ push to test branch
 ```
 push to master branch
 ```
+
+| SECRET  | DESCRIPTION  |
+|---|---|
+| GH_PAT  | Github Access Token - using in actions to get an access to GitHub |
+| GIPHY_API_KEY  | Giphy Api Key - using to get GIF in LGTM  |
+| HAYUNA_HOST  | IP to server |
+| HAYUNA_USERNAME  | Username to server  |
+| HAYUNA_PASSWORD  | Password to server  |
+| HAYUNA_PORT  | Server port  |
+ 	
+ 	
+ 	
+ 	
+ 	
+ 
