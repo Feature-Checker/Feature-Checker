@@ -2,18 +2,12 @@
   <nav class="wrapper landingNavigation">
     <div class="nav-content">
       <div class="nav-logo">
-        <img
-          src="@/assets/images/logo/dev-logo-white.svg"
-          alt
-          class="logo-desktop"
-        />
-        <img
-          src="@/assets/images/logo/dev-sygnet.svg"
-          alt
-          class="logo-mobile"
-        />
+        <router-link to="/">
+          <img src="@/assets/images/logo/dev-logo-white.svg" alt class="logo-desktop" />
+          <img src="@/assets/images/logo/dev-sygnet.svg" alt class="logo-mobile" />
+        </router-link>
       </div>
-      <ul class="nav-links" :class="{ 'nav-active': navActive }">
+      <!-- <ul class="nav-links" :class="{ 'nav-active': navActive }">
         <router-link to="/" class="link-item">
           <span>{{ $t("menu#1") }}</span>
         </router-link>
@@ -26,44 +20,40 @@
         <router-link to="/about" class="link-item">
           <span>{{ $t("menu#4") }}</span>
         </router-link>
-      </ul>
+      </ul>-->
       <module-langSwitcher class="language-chooser" />
     </div>
 
-    <div
-      class="toggle-menu"
-      @click="ToggleMenu"
-      v-on-clickaway="NavDropdownHide"
-    >
+    <!-- <div class="toggle-menu" @click="ToggleMenu" v-on-clickaway="NavDropdownHide">
       <i class="fas fa-bars"></i>
-    </div>
+    </div>-->
   </nav>
 </template>
 
 <script>
 import LanguageSwitcher from "./LanguageSwitcher.vue";
 
-import { mixin as clickaway } from "vue-clickaway";
+// import { mixin as clickaway } from "vue-clickaway";
 
 export default {
   name: "Navigation",
   components: {
     "module-langSwitcher": LanguageSwitcher
-  },
-  mixins: [clickaway],
-  data() {
-    return {
-      navActive: false
-    };
-  },
-  methods: {
-    ToggleMenu() {
-      this.navActive = !this.navActive;
-    },
-    NavDropdownHide: function() {
-      this.navActive = false;
-    }
   }
+  // mixins: [clickaway],
+  // data() {
+  //   return {
+  //     navActive: false
+  //   };
+  // },
+  // methods: {
+  //   ToggleMenu() {
+  //     this.navActive = !this.navActive;
+  //   },
+  //   NavDropdownHide: function() {
+  //     this.navActive = false;
+  //   }
+  // }
 };
 </script>
 <style lang="scss">

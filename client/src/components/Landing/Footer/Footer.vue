@@ -11,34 +11,30 @@
             <p>Tech amount:</p>
             <span>{{ techAmount }}</span>
           </div>
-        </div> -->
+        </div>-->
         <div class="footer-brand">
-          <img src="@/assets/images/logo/dev-logo-white.svg" alt="" />
-          <span>{{ appVersion }}</span>
+          <router-link to="/">
+            <img src="@/assets/images/logo/dev-logo-white.svg" alt />
+            <span>{{ appVersion }}</span>
+          </router-link>
         </div>
         <div class="footer-nav">
           <nav class="footer-item">
             <h3>Frontend</h3>
             <ul>
-              <li v-for="item in frontendItems" :key="item.title">
-                {{ item.title }}
-              </li>
+              <li v-for="item in frontendItems" :key="item.title">{{ item.title }}</li>
             </ul>
           </nav>
           <nav class="footer-item">
             <h3>Backend</h3>
             <ul>
-              <li v-for="item in backendItems" :key="item.title">
-                {{ item.title }}
-              </li>
+              <li v-for="item in backendItems" :key="item.title">{{ item.title }}</li>
             </ul>
           </nav>
           <nav class="footer-item">
             <h3>Design</h3>
             <ul>
-              <li v-for="item in designItems" :key="item.title">
-                {{ item.title }}
-              </li>
+              <li v-for="item in designItems" :key="item.title">{{ item.title }}</li>
             </ul>
           </nav>
         </div>
