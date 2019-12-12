@@ -40,6 +40,8 @@ push to master branch
 | HAYUNA_USERNAME  | Username to server  |
 | HAYUNA_PASSWORD  | Password to server  |
 | HAYUNA_PORT  | Server port  |
+| API_KEY_GOOGLE | |	
+| CSE_ID_GOOGLE | |
  	
  	
  	
