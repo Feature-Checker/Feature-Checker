@@ -53,6 +53,9 @@ export default {
       this.selectedLogo = logo.logoImage;
       this.selected = logo.id;
     }
+  },
+  created() {
+    document.title = "Dev Release | Add Tool";
   }
 };
 </script>
