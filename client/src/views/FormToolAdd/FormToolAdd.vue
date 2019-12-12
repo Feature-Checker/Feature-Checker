@@ -13,7 +13,7 @@
               v-for="logo in toolLogos"
               @click="handleSelectItem(logo)"
               v-bind:key="logo.id"
-              :class="{active: selected == logo.id }"
+              :class="{ active: selected == logo.id }"
             />
           </div>
         </div>
@@ -66,7 +66,19 @@ section.add-tool {
   justify-content: center;
   align-items: center;
   .form-box {
-    width: 600px;
+    width: 30%;
+    @include max-dv($md) {
+      width: 80%;
+    }
+    @include ipad(ipadl) {
+      width: 60%;
+    }
+    @include ipad(prop) {
+      width: 60%;
+    }
+    @include ipad(prol) {
+      width: 60%;
+    }
     form {
       display: flex;
       flex-direction: column;
@@ -103,10 +115,25 @@ section.add-tool {
           flex-wrap: wrap;
           img {
             width: 15%;
-            margin: 10px 20px;
+            margin: 10px 10px;
             padding: 10px 15px;
             cursor: pointer;
             transition: 0.2s;
+            @include max-dv($md) {
+              width: 20%;
+              margin: 3px;
+            }
+            @include ipad(ipadp) {
+              width: 15%;
+              margin: 3px;
+            }
+            @include ipad(ipadl) {
+              width: 15%;
+              margin: 3px;
+            }
+            @include ipad(prol) {
+              width: 10%;
+            }
             &.active {
               padding: 10px 15px;
               background: rgba(255, 255, 255, 0.3);
