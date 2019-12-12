@@ -8,8 +8,8 @@ services:
     environment:
       - PORT=4001
       - VIRTUAL_HOST=2000
-      - API_KEY_GOOGLE = ${API_KEY_GOOGLE}
-      - CSE_ID_GOOGLE = ${CSE_ID_GOOGLE}
+      - API_KEY_GOOGLE=${API_KEY_GOOGLE}
+      - CSE_ID_GOOGLE=${CSE_ID_GOOGLE}
     ports:
       - 4001:4000
     restart: always
