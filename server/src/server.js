@@ -5,7 +5,7 @@ const db = require('./services/db')
 const middleware = require('./services/middleware')
 
 const port = 4000;
-
+console.log(process.env)
 const app = express()
 middleware.use(app)
 db.connect()
