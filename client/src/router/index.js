@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../components/Landing/Landing.vue";
+import AddTool from "../views/FormToolAdd/FormToolAdd.vue";
 // import i18n from "../i18n";
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
         path: "/",
         name: "home",
         component: Home
+      },
+      {
+        path: "/add_tool",
+        name: "addTool",
+        component: AddTool
       }
     ]
   }
