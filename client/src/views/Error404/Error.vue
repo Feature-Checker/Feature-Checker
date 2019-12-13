@@ -33,13 +33,22 @@ export default {};
     font-size: 12em;
     color: $purpleHeart;
     margin: 20px 0;
+    @include max-dv($md) {
+      font-size: 7em;
+    }
   }
   h4 {
     margin: 0 0 50px 0;
+    @include xs {
+      font-size: 1.6em;
+    }
   }
   p {
     margin: 10px 0;
     color: $white;
+    @include xs {
+      font-size: 1.2em;
+    }
   }
 }
 </style>
