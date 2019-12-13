@@ -2,59 +2,73 @@
   <section class="suggestion-form">
     <div class="wrapper">
       <div class="title-box">
-        <h2>Would you like to tell us something?</h2>
-        <h4>Choose a conversation topic and contact us!</h4>
+        <h2>{{ $t("landingContent.contactForm.title") }}</h2>
+        <h4>{{ $t("landingContent.contactForm.subTitle") }}</h4>
       </div>
       <div class="available-topics">
         <span
           @click="showForm = 'language'"
           class="topics-item"
           :class="{ activeItem: showForm == 'language' }"
-          >Language translations</span
+          >{{ $t("landingContent.contactForm.section-language.name") }}</span
         >
         <span
           @click="showForm = 'tools'"
           class="topics-item"
           :class="{ activeItem: showForm == 'tools' }"
-          >Available tools</span
+          >{{ $t("landingContent.contactForm.section-tool.name") }}</span
         >
         <span
           @click="showForm = 'general'"
           class="topics-item"
           :class="{ activeItem: showForm == 'general' }"
-          >General</span
+          >{{ $t("landingContent.contactForm.section-general.name") }}</span
         >
       </div>
       <div class="forms-box">
         <div v-if="showForm == 'language'" class="translation-form">
-          <p>Choose option</p>
+          <p>{{ $t("landingContent.contactForm.section-language.header") }}</p>
           <div class="category-item">
             <span
               @click="translationCategory = 'new'"
               :class="{ 'trans-active': translationCategory == 'new' }"
-              >New translation</span
+              >{{
+                $t("landingContent.contactForm.section-language.option1")
+              }}</span
             >
             <span
               @click="translationCategory = 'error'"
               :class="{ 'trans-active': translationCategory == 'error' }"
-              >Error in translation</span
+              >{{
+                $t("landingContent.contactForm.section-language.option2")
+              }}</span
             >
           </div>
           <form class="new-translation" v-if="translationCategory == 'new'">
-            <label for="">Type language</label>
+            <label for="">{{
+              $t("landingContent.contactForm.form.type")
+            }}</label>
             <input type="text" class="input-padding" />
-            <label for="">Name</label>
+            <label for="">{{
+              $t("landingContent.contactForm.form.name")
+            }}</label>
             <input type="text" />
-            <label for="">Email</label>
+            <label for="">{{
+              $t("landingContent.contactForm.form.email")
+            }}</label>
             <input type="email" />
-            <label for="">Message</label>
+            <label for="">{{
+              $t("landingContent.contactForm.form.message")
+            }}</label>
             <textarea name="" id=""></textarea>
             <button type="submit" class="btn purple">
               <i class="fas fa-envelope"></i>
             </button>
           </form>
           <form class="error-translation" v-if="translationCategory == 'error'">
-            <label for="">Choose translation</label>
+            <label for="">{{
+              $t("landingContent.contactForm.form.choose")
+            }}</label>
             <ul>
               <li
                 v-for="item in languages"
@@ -65,11 +79,17 @@
                 <span>{{ item.name }}</span>
               </li>
             </ul>
-            <label for="">Name</label>
+            <label for="">{{
+              $t("landingContent.contactForm.form.name")
+            }}</label>
             <input type="text" />
-            <label for="">Email</label>
+            <label for="">{{
+              $t("landingContent.contactForm.form.email")
+            }}</label>
             <input type="email" />
-            <label for="">Message</label>
+            <label for="">{{
+              $t("landingContent.contactForm.form.message")
+            }}</label>
             <textarea name="" id=""></textarea>
             <button type="submit" class="btn purple">
               <i class="fas fa-envelope"></i>
@@ -77,38 +97,38 @@
           </form>
         </div>
         <div v-else-if="showForm == 'tools'" class="translation-form">
-          <p>Choose option</p>
+          <p>{{ $t("landingContent.contactForm.section-tool.header") }}</p>
           <div class="category-item">
             <span
               @click="toolCategory = 'new'"
               :class="{ 'trans-active': toolCategory == 'new' }"
-              >New tool</span
+              >{{ $t("landingContent.contactForm.section-tool.option1") }}</span
             >
             <span
               @click="toolCategory = 'error'"
               :class="{ 'trans-active': toolCategory == 'error' }"
-              >Bug in tool</span
+              >{{ $t("landingContent.contactForm.section-tool.option2") }}</span
             >
           </div>
           <form action="" v-if="toolCategory == 'new'">
             <label for="">
-              Tool name
+              {{ $t("landingContent.contactForm.form.tool-name") }}
             </label>
             <input type="text" />
             <label for="">
-              Link to Github/Bitbucket
+              {{ $t("landingContent.contactForm.form.link-to-repo") }}
             </label>
             <input type="text" />
             <label for="">
-              Name
+              {{ $t("landingContent.contactForm.form.name") }}
             </label>
             <input type="text" />
             <label for="">
-              Email
+              {{ $t("landingContent.contactForm.form.email") }}
             </label>
             <input type="email" />
             <label for="">
-              Message
+              {{ $t("landingContent.contactForm.form.message") }}
             </label>
             <textarea name="" id=""></textarea>
             <button type="submit" class="btn purple">
@@ -117,23 +137,23 @@
           </form>
           <form action="" v-if="toolCategory == 'error'">
             <label for="">
-              Repo name
+              {{ $t("landingContent.contactForm.form.repo-name") }}
             </label>
             <input type="text" />
             <label for="">
-              Link to tool
+              {{ $t("landingContent.contactForm.form.link-to-tool") }}
             </label>
             <input type="text" />
             <label for="">
-              Name
+              {{ $t("landingContent.contactForm.form.name") }}
             </label>
             <input type="text" />
             <label for="">
-              Email
+              {{ $t("landingContent.contactForm.form.email") }}
             </label>
             <input type="email" />
             <label for="">
-              Message
+              {{ $t("landingContent.contactForm.form.message") }}
             </label>
             <textarea name="" id=""></textarea>
             <button type="submit" class="btn purple">
@@ -142,22 +162,22 @@
           </form>
         </div>
         <div v-else-if="showForm == 'general'" class="translation-form">
-          <p>Send Us whatever you want</p>
-          <form action="" v-if="toolCategory == 'new'">
+          <p>{{ $t("landingContent.contactForm.section-general.header") }}</p>
+          <form action="">
             <label for="">
-              Name
+              {{ $t("landingContent.contactForm.form.name") }}
             </label>
             <input type="text" />
             <label for="">
-              Email
+              {{ $t("landingContent.contactForm.form.email") }}
             </label>
             <input type="email" />
             <label for="">
-              Title
+              {{ $t("landingContent.contactForm.form.title") }}
             </label>
             <input type="text" />
             <label for="">
-              Message
+              {{ $t("landingContent.contactForm.form.message") }}
             </label>
             <textarea name="" id=""></textarea>
             <button type="submit" class="btn purple">
