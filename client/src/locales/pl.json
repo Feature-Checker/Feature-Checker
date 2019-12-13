@@ -25,35 +25,7 @@
     },
     "contactForm": {
       "title": "Chciałbyś nam coś powiedzieć?",
-      "subTitle": "Wybierz temat rozmowy i napisz do nas!",
-      "section-language": {
-        "name": "Tłumaczenie",
-        "header": "Wybierz kategorie",
-        "option1": "Nowe tłumaczenie",
-        "option2": "Błąd w tłumaczeniu"
-      },
-      "section-tool": {
-        "name": "Dostępne narzędzia",
-        "header": "Wybierz kategorie",
-        "option1": "Nowe narzędzie",
-        "option2": "Błąd w narzędziu"
-      },
-      "section-general": {
-        "name": "Ogólne",
-        "header": "Napisz do nas cokolwiek uważasz"
-      },
-      "form": {
-        "type": "Wpisz język",
-        "choose": "Wybierz język",
-        "name": "Imię",
-        "email": "Email",
-        "message": "Wiadomość",
-        "tool-name": "Nazwa narzędzia",
-        "link-to-repo": "Link do Github/Bitbucket",
-        "repo-name": "Nazwa repozytorium",
-        "link-to-tool": "Link do narzędzia",
-        "title": "Tytuł"
-      }
+      "subTitle": "Wyślij nam swoje pomysły i opinie!"
     }
   },
   "addTool-page": {

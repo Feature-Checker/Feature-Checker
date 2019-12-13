@@ -5,202 +5,139 @@
         <h2>{{ $t("landingContent.contactForm.title") }}</h2>
         <h4>{{ $t("landingContent.contactForm.subTitle") }}</h4>
       </div>
-      <div class="available-topics">
-        <span
-          @click="showForm = 'language'"
-          class="topics-item"
-          :class="{ activeItem: showForm == 'language' }"
-          >{{ $t("landingContent.contactForm.section-language.name") }}</span
-        >
-        <span
-          @click="showForm = 'tools'"
-          class="topics-item"
-          :class="{ activeItem: showForm == 'tools' }"
-          >{{ $t("landingContent.contactForm.section-tool.name") }}</span
-        >
-        <span
-          @click="showForm = 'general'"
-          class="topics-item"
-          :class="{ activeItem: showForm == 'general' }"
-          >{{ $t("landingContent.contactForm.section-general.name") }}</span
-        >
-      </div>
-      <div class="forms-box">
-        <transition name="fade" mode="out-in">
-          <Language v-if="showForm == 'language'" key="language" />
-          <Tools v-else-if="showForm == 'tools'" key="tools" />
-          <General v-else-if="showForm == 'general'" key="general" />
-        </transition>
-      </div>
+      <form action>
+        <div class="form-box boxShadow">
+          <div class="contact-info">
+            <label for>
+              Name
+              <input type="text" />
+              <i class="fas fa-user"></i>
+            </label>
+            <label for>
+              Email
+              <input type="text" />
+              <i class="fas fa-envelope"></i>
+            </label>
+          </div>
+          <div class="message-info">
+            <label for>
+              Title
+              <input type="text" />
+              <i class="fas fa-pen-fancy"></i>
+            </label>
+            <label for class="textarea">
+              Message
+              <textarea></textarea>
+              <i class="fas fa-comment-alt"></i>
+            </label>
+            <button class="btn purple">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 </template>
 
 <script>
-import Language from "./SuggestionFormItems/Language.vue";
-import Tools from "./SuggestionFormItems/Tools.vue";
-import General from "./SuggestionFormItems/General.vue";
-export default {
-  components: {
-    Language,
-    Tools,
-    General
-  },
-  data() {
-    return {
-      showForm: "language"
-    };
-  }
-};
+export default {};
 </script>
 
 <style lang="scss">
-.fade-leave-active {
-  transition: opacity 0.4s;
-}
-
-.fade-enter-active {
-  transition: opacity 0.4s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-
-@import "vue-select/src/scss/vue-select.scss";
-section.suggestion-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px 0;
-  .available-topics {
+.suggestion-form {
+  form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    @include max-dv($md - 1) {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin: 30px 0;
-    }
-    .topics-item {
-      cursor: pointer;
-      font-size: 1.4em;
-      padding: 5px 20px;
-      text-transform: uppercase;
-      font-family: $mont;
-      font-weight: 500;
-      color: $navy;
-      @include max-dv($md - 1) {
-        width: 100%;
-        text-align: center;
-        padding: 10px 20px;
-      }
-      &.activeItem {
-        background: $navy;
-        color: $white;
 
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        @include max-dv($md - 1) {
-          border-radius: 10px;
-        }
-      }
-    }
-  }
-  .forms-box {
-    .translation-form {
-      background: $navy;
-      padding: 10px 20px;
+    .form-box {
+      background: rgb(23, 27, 45);
+      background: linear-gradient(
+        45deg,
+        rgba(23, 27, 45, 1) 0%,
+        rgba(37, 39, 66, 1) 100%
+      );
+      width: 50%;
+      padding: 20px;
       border-radius: 10px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      @include max-dv($md - 1) {
-        border-radius: 10px;
+      @include max-dv($md) {
+        width: 100%;
       }
-
-      p,
-      span,
-      label,
-      input,
-      textarea {
-        font-family: $poppins;
-        color: $white;
-      }
-      p {
-        text-align: center;
-        margin: 10px 0;
-        color: $heliotrope;
-      }
-      .category-item {
-        margin: 10px 0 20px 0;
+      .contact-info,
+      .message-info {
         display: flex;
-        justify-content: space-around;
-        @include max-dv($md - 1) {
-          flex-direction: column;
-          align-items: center;
-        }
-        span {
-          cursor: pointer;
-          @include max-dv($md - 1) {
-            margin: 10px 0;
-          }
-        }
-        .trans-active {
-          border-bottom: 1px solid $purpleHeart;
-          font-weight: 500;
-        }
-      }
-      form {
-        display: flex;
-        flex-direction: column;
-        ul {
-          list-style: none;
+        justify-content: space-between;
+        label {
           display: flex;
-          margin: 8px 0;
-          li {
-            margin: 0 10px 0 0;
-            cursor: pointer;
-            padding: 0px 10px;
-            &.active {
-              background: $froly;
-              border-radius: 10px;
-              span {
-                color: $white;
+          flex-direction: column;
+          color: $lola;
+          font-size: 1.2em;
+          font-family: $mont;
+          text-transform: uppercase;
+          font-weight: 600;
+          width: 100%;
+          position: relative;
+          input,
+          textarea {
+            background: $navy;
+            border: none;
+            border: 1px solid #3c456e;
+            padding: 8px 0;
+            color: $gray;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 5px;
+            position: relative;
+            padding-left: 5px;
+            outline: none;
+            &:focus {
+              & + svg {
+                color: $purpleMedium;
               }
             }
-            span {
-              color: $froly;
-              font-weight: 500;
-            }
           }
-        }
-        input,
-        textarea {
-          background: transparent;
-          border: none;
-          border-bottom: 1px solid $purpleMedium;
-          outline: none;
-          padding: 5px 0;
-          resize: none;
-          margin-bottom: 10px;
-          &.input-padding {
-            padding: 7px 0;
-          }
-        }
-        textarea {
-          width: 100%;
-          height: 50px;
-        }
-        button {
-          display: flex;
-          align-items: center;
-          position: relative;
-          padding: 5px 50px;
-          margin: 20px auto 10px auto;
           svg {
-            font-size: 2em;
+            transition: 0.2s;
+            position: absolute;
+            font-size: 16px;
+            color: $white;
+            top: 52%;
+            right: 12px;
           }
+        }
+      }
+      .contact-info {
+        label {
+          width: 45%;
+        }
+      }
+      .message-info {
+        margin: 20px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        label.textarea {
+          margin-top: 20px;
+          textarea {
+            width: 100%;
+            height: 100px;
+            resize: none;
+          }
+          svg {
+            position: absolute;
+            font-size: 16px;
+            color: $white;
+            top: inherit;
+            bottom: 10px;
+            right: 12px;
+          }
+        }
+      }
+      button {
+        margin: 20px auto 0 auto;
+        svg {
+          font-size: 2em;
         }
       }
     }

@@ -25,35 +25,7 @@
     },
     "contactForm": {
       "title": "Would you like to tell us something?",
-      "subTitle": "Choose a conversation topic and contact us!",
-      "section-language": {
-        "name": "language translations",
-        "header": "Choose Option",
-        "option1": "New translation",
-        "option2": "Error in translation"
-      },
-      "section-tool": {
-        "name": "Available tools",
-        "header": "Choose Option",
-        "option1": "New tool",
-        "option2": "Bug in tool"
-      },
-      "section-general": {
-        "name": "General",
-        "header": "Send Us whatever you want"
-      },
-      "form": {
-        "type": "Type language",
-        "choose": "Choose translation",
-        "name": "Name",
-        "email": "Email",
-        "message": "Message",
-        "tool-name": "Tool name",
-        "link-to-repo": "Link to Github/Bitbucket",
-        "repo-name": "Repo name",
-        "link-to-tool": "Link to tool",
-        "title": "Title"
-      }
+      "subTitle": "Send us your ideas and opinions!"
     }
   },
   "addTool-page": {
