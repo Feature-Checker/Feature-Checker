@@ -29,6 +29,11 @@
     "logoTitle": "Dostępne logotypy",
     "repoSearchLabel": "Nazwa repozytorium"
   },
+  "error-page": {
+    "errorSubTitle": "Strona której szukasz nie istnieje :(",
+    "errorAction": "Wróć do strony głównej i spróbuj ponownie",
+    "button": "Powrót"
+  },
   "menu#1": "Strona Główna",
   "menu#2": "O Nas",
   "menu#3": "Kontakt",

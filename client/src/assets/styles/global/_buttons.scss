@@ -9,6 +9,7 @@
   font-weight: bold;
   transition: 0.5s;
   border: none;
+  cursor: pointer;
   &.hit-pink {
     background: rgb(253, 163, 129);
     background: linear-gradient(90deg, #fda381 0%, rgb(248, 114, 125) 100%);

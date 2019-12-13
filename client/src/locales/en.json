@@ -29,6 +29,11 @@
     "logoTitle": "Available logos",
     "repoSearchLabel": "Repo name"
   },
+  "error-page": {
+    "errorSubTitle": "Page you looking for doesn't exist :(",
+    "errorAction": "Comeback to start and try find another way",
+    "button": "Comeback"
+  },
   "menu#1": "Home",
   "menu#2": "About",
   "menu#3": "Contact",
