@@ -84,7 +84,7 @@ export default {
     width: 30%;
     text-align: center;
     margin: 10px 0 50px 0;
-    color: $white;
+    color: #dfdfdf;
     font-family: $poppins;
     @include max-dv($md) {
       width: 80%;
