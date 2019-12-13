@@ -2,10 +2,10 @@
   <section class="add-tool">
     <div class="form-box">
       <form action>
-        <label for>Repo name</label>
+        <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
         <input type="text" />
         <div class="logo-container">
-          <p>Available logos</p>
+          <p>{{$t("addTool-page.logoTitle")}}</p>
           <div class="logos">
             <img
               alt
@@ -17,7 +17,7 @@
             />
           </div>
         </div>
-        <button class="btn purple">Add Repo</button>
+        <button class="btn purple">{{$t("addTool-page.button")}}</button>
       </form>
     </div>
   </section>

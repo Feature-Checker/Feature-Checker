@@ -24,6 +24,11 @@
       }
     }
   },
+  "addTool-page": {
+    "button": "Add repo",
+    "logoTitle": "Available logos",
+    "repoSearchLabel": "Repo name"
+  },
   "menu#1": "Home",
   "menu#2": "About",
   "menu#3": "Contact",

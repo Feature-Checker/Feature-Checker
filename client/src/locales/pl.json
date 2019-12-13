@@ -24,6 +24,11 @@
       }
     }
   },
+  "addTool-page": {
+    "button": "Dodaj repozytorium",
+    "logoTitle": "Dostępne logotypy",
+    "repoSearchLabel": "Nazwa repozytorium"
+  },
   "menu#1": "Strona Główna",
   "menu#2": "O Nas",
   "menu#3": "Kontakt",
