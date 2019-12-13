@@ -32,25 +32,6 @@ $itemContentPadding: 10px;
 
 section.choose-road {
   min-height: 100vh;
-  .title-box {
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    h2 {
-      font-size: 3em;
-    }
-    h2,
-    h4 {
-      color: $navy;
-      text-align: center;
-    }
-    h4 {
-      font-size: 16px;
-      font-weight: 400;
-      margin: 20px 0 0 0;
-    }
-  }
 }
 section.chooseRoad-item {
   &.left,

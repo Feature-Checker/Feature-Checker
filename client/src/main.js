@@ -8,6 +8,9 @@ import Multiselect from "vue-multiselect";
 import VueAnalytics from "vue-analytics";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
+import vSelect from "vue-select";
+
+Vue.component("v-select", vSelect);
 
 Vue.config.productionTip = false;
 Vue.component("multiselect", Multiselect);

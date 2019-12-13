@@ -3,9 +3,7 @@
     <div class="wrapper">
       <div class="title-box">
         <h2>{{ $t("landingContent.popularTech.title") }}</h2>
-        <h4>
-          {{ $t("landingContent.popularTech.subtitle") }}
-        </h4>
+        <h4>{{ $t("landingContent.popularTech.subtitle") }}</h4>
       </div>
       <module-frontend></module-frontend>
       <module-backend></module-backend>
@@ -32,25 +30,6 @@ export default {
 section.popularTechnology {
   min-height: 100vh;
   margin-top: 50px;
-  .title-box {
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    h2 {
-      font-size: 3em;
-    }
-    h2,
-    h4 {
-      color: $navy;
-      text-align: center;
-    }
-    h4 {
-      font-size: 16px;
-      font-weight: 400;
-      margin: 20px 0 0 0;
-    }
-  }
   .frontend,
   .backend,
   .design {
