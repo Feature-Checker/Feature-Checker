@@ -3,14 +3,18 @@
     <h2>{ 404 }</h2>
     <h4>{{$t("error-page.errorSubTitle")}}</h4>
     <p>{{$t("error-page.errorAction")}}</p>
-    <router-link to="/">
+    <router-link :to="{name: 'home'}">
       <button class="btn purple">{{$t("error-page.button")}}</button>
     </router-link>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  created() {
+    document.title = "Dev Release | 404";
+  }
+};
 </script>
 
 <style lang="scss">

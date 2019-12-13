@@ -1,20 +1,12 @@
 <template>
-  <div
-    class="select-language"
-    v-on-clickaway="LangDropdownHide"
-    @click="ToggleLang"
-  >
+  <div class="select-language" v-on-clickaway="LangDropdownHide" @click="ToggleLang">
     <span :class="{ active: langActive }">
       {{ $i18n.locale }}
       <i class="fas fa-caret-down"></i>
     </span>
 
     <ul :class="{ 'lang-active': langActive }">
-      <li
-        v-for="lang in languages"
-        :key="lang.title"
-        @click.prevent="setLocale(lang.title)"
-      >
+      <li v-for="lang in languages" :key="lang.title" @click.prevent="setLocale(lang.title)">
         <img :src="lang.flag" alt />
         {{ lang.title }}
       </li>
@@ -51,9 +43,9 @@ export default {
     },
     setLocale(locale) {
       this.$i18n.locale = locale;
-      // this.$router.push({
-      //   params: { lang: locale }
-      // });
+      this.$router.push({
+        params: { lang: locale }
+      });
     }
   }
 };

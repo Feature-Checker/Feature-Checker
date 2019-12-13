@@ -13,9 +13,9 @@
           </div>
         </div>-->
         <div class="footer-brand">
-          <router-link to="/">
+          <router-link :to="{name: 'home'}">
             <img src="@/assets/images/logo/dev-logo-white.svg" alt />
-            <router-link to="/add_tool">
+            <router-link :to="{name: 'addTool'}">
               <span>{{ appVersion }}</span>
             </router-link>
           </router-link>

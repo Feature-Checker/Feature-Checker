@@ -2,7 +2,7 @@
   <nav class="wrapper landingNavigation">
     <div class="nav-content">
       <div class="nav-logo">
-        <router-link to="/">
+        <router-link :to="{name: 'home'}">
           <img src="@/assets/images/logo/dev-logo-white.svg" alt class="logo-desktop" />
           <img src="@/assets/images/logo/dev-sygnet.svg" alt class="logo-mobile" />
         </router-link>
