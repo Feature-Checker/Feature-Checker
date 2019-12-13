@@ -30,9 +30,13 @@ const routes = [
         component: AddTool
       },
       {
-        path: "/*",
+        path: "/404",
         name: "404",
         component: Error404
+      },
+      {
+        path: "/*",
+        redirect: "/404"
       }
     ]
   }
