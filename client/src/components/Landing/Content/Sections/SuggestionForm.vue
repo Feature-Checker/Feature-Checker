@@ -177,7 +177,7 @@ export default {
       selected: null,
       translationCategory: "new",
       toolCategory: "new",
-      showForm: "",
+      showForm: "language",
       languages: [
         {
           id: "1",
@@ -218,6 +218,7 @@ section.suggestion-form {
     }
     .topics-item {
       cursor: pointer;
+      font-size: 1.4em;
       padding: 5px 20px;
       text-transform: uppercase;
       font-family: $mont;
