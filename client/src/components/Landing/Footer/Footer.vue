@@ -15,7 +15,9 @@
         <div class="footer-brand">
           <router-link to="/">
             <img src="@/assets/images/logo/dev-logo-white.svg" alt />
-            <span>{{ appVersion }}</span>
+            <router-link to="/add_tool">
+              <span>{{ appVersion }}</span>
+            </router-link>
           </router-link>
         </div>
         <div class="footer-nav">
