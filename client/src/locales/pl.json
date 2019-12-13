@@ -62,8 +62,8 @@
     "repoSearchLabel": "Nazwa repozytorium"
   },
   "error-page": {
-    "errorSubTitle": "Strona której szukasz nie istnieje :(",
-    "errorAction": "Wróć do strony głównej i spróbuj ponownie",
+    "errorSubTitle": "Strony nie znaleziono",
+    "errorAction": "Przepraszamy, strona której szukasz nie istnieje w naszej bazie danych! Kliknij przycisk i wróć do naszej strony głównej",
     "button": "Powrót"
   },
   "menu#1": "Strona Główna",

@@ -62,8 +62,8 @@
     "repoSearchLabel": "Repo name"
   },
   "error-page": {
-    "errorSubTitle": "Page you looking for doesn't exist :(",
-    "errorAction": "Comeback to start and try find another way",
+    "errorSubTitle": "Page not found",
+    "errorAction": "We’re sorry, the page you have looked for does not exist in our database! Click the button and comeback to Our home page",
     "button": "Comeback"
   },
   "menu#1": "Home",

@@ -26,201 +26,48 @@
         >
       </div>
       <div class="forms-box">
-        <div v-if="showForm == 'language'" class="translation-form">
-          <p>{{ $t("landingContent.contactForm.section-language.header") }}</p>
-          <div class="category-item">
-            <span
-              @click="translationCategory = 'new'"
-              :class="{ 'trans-active': translationCategory == 'new' }"
-              >{{
-                $t("landingContent.contactForm.section-language.option1")
-              }}</span
-            >
-            <span
-              @click="translationCategory = 'error'"
-              :class="{ 'trans-active': translationCategory == 'error' }"
-              >{{
-                $t("landingContent.contactForm.section-language.option2")
-              }}</span
-            >
-          </div>
-          <form class="new-translation" v-if="translationCategory == 'new'">
-            <label for="">{{
-              $t("landingContent.contactForm.form.type")
-            }}</label>
-            <input type="text" class="input-padding" />
-            <label for="">{{
-              $t("landingContent.contactForm.form.name")
-            }}</label>
-            <input type="text" />
-            <label for="">{{
-              $t("landingContent.contactForm.form.email")
-            }}</label>
-            <input type="email" />
-            <label for="">{{
-              $t("landingContent.contactForm.form.message")
-            }}</label>
-            <textarea name="" id=""></textarea>
-            <button type="submit" class="btn purple">
-              <i class="fas fa-envelope"></i>
-            </button>
-          </form>
-          <form class="error-translation" v-if="translationCategory == 'error'">
-            <label for="">{{
-              $t("landingContent.contactForm.form.choose")
-            }}</label>
-            <ul>
-              <li
-                v-for="item in languages"
-                :key="item.name"
-                @click="handleSelectItem(item)"
-                :class="{ active: selected == item.id }"
-              >
-                <span>{{ item.name }}</span>
-              </li>
-            </ul>
-            <label for="">{{
-              $t("landingContent.contactForm.form.name")
-            }}</label>
-            <input type="text" />
-            <label for="">{{
-              $t("landingContent.contactForm.form.email")
-            }}</label>
-            <input type="email" />
-            <label for="">{{
-              $t("landingContent.contactForm.form.message")
-            }}</label>
-            <textarea name="" id=""></textarea>
-            <button type="submit" class="btn purple">
-              <i class="fas fa-envelope"></i>
-            </button>
-          </form>
-        </div>
-        <div v-else-if="showForm == 'tools'" class="translation-form">
-          <p>{{ $t("landingContent.contactForm.section-tool.header") }}</p>
-          <div class="category-item">
-            <span
-              @click="toolCategory = 'new'"
-              :class="{ 'trans-active': toolCategory == 'new' }"
-              >{{ $t("landingContent.contactForm.section-tool.option1") }}</span
-            >
-            <span
-              @click="toolCategory = 'error'"
-              :class="{ 'trans-active': toolCategory == 'error' }"
-              >{{ $t("landingContent.contactForm.section-tool.option2") }}</span
-            >
-          </div>
-          <form action="" v-if="toolCategory == 'new'">
-            <label for="">
-              {{ $t("landingContent.contactForm.form.tool-name") }}
-            </label>
-            <input type="text" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.link-to-repo") }}
-            </label>
-            <input type="text" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.name") }}
-            </label>
-            <input type="text" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.email") }}
-            </label>
-            <input type="email" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.message") }}
-            </label>
-            <textarea name="" id=""></textarea>
-            <button type="submit" class="btn purple">
-              <i class="fas fa-envelope"></i>
-            </button>
-          </form>
-          <form action="" v-if="toolCategory == 'error'">
-            <label for="">
-              {{ $t("landingContent.contactForm.form.repo-name") }}
-            </label>
-            <input type="text" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.link-to-tool") }}
-            </label>
-            <input type="text" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.name") }}
-            </label>
-            <input type="text" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.email") }}
-            </label>
-            <input type="email" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.message") }}
-            </label>
-            <textarea name="" id=""></textarea>
-            <button type="submit" class="btn purple">
-              <i class="fas fa-envelope"></i>
-            </button>
-          </form>
-        </div>
-        <div v-else-if="showForm == 'general'" class="translation-form">
-          <p>{{ $t("landingContent.contactForm.section-general.header") }}</p>
-          <form action="">
-            <label for="">
-              {{ $t("landingContent.contactForm.form.name") }}
-            </label>
-            <input type="text" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.email") }}
-            </label>
-            <input type="email" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.title") }}
-            </label>
-            <input type="text" />
-            <label for="">
-              {{ $t("landingContent.contactForm.form.message") }}
-            </label>
-            <textarea name="" id=""></textarea>
-            <button type="submit" class="btn purple">
-              <i class="fas fa-envelope"></i>
-            </button>
-          </form>
-        </div>
+        <transition name="fade" mode="out-in">
+          <Language v-if="showForm == 'language'" key="language" />
+          <Tools v-else-if="showForm == 'tools'" key="tools" />
+          <General v-else-if="showForm == 'general'" key="general" />
+        </transition>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import Language from "./SuggestionFormItems/Language.vue";
+import Tools from "./SuggestionFormItems/Tools.vue";
+import General from "./SuggestionFormItems/General.vue";
 export default {
+  components: {
+    Language,
+    Tools,
+    General
+  },
   data() {
     return {
-      selected: null,
-      translationCategory: "new",
-      toolCategory: "new",
-      showForm: "language",
-      languages: [
-        {
-          id: "1",
-          name: "EN"
-        },
-        {
-          id: "2",
-          name: "PL"
-        }
-      ]
+      showForm: "language"
     };
-  },
-  methods: {
-    handleSelectItem(item) {
-      this.selected = item.id;
-    }
   }
 };
 </script>
 
 <style lang="scss">
-@import "vue-select/src/scss/vue-select.scss";
+.fade-leave-active {
+  transition: opacity 0.4s;
+}
 
+.fade-enter-active {
+  transition: opacity 0.4s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+@import "vue-select/src/scss/vue-select.scss";
 section.suggestion-form {
   display: flex;
   flex-direction: column;
