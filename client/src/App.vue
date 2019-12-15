@@ -10,7 +10,7 @@
 import Navigation from "@/components/Navigation/Navigation.vue";
 
 const environment = `${process.env.ENVIRONMENT} env`;
-
+console.log(process.env)
 export default {
   components: {
     Navigation
