@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    {{ JSON.stringify(process) }}TEST env
+    {{ environment }}
     <Navigation></Navigation>
     <router-view></router-view>
   </div>
@@ -9,12 +9,14 @@
 <script>
 import Navigation from "@/components/Navigation/Navigation.vue";
 
+const environment = `${process.env.ENVIRONMENT} env`;
+
 export default {
   components: {
     Navigation
   },
   data: () => ({
-    process: process.env
+    environment
   }),
 };
 </script>

@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile.test
     container_name: TST_client
     environment:
-      - NODE_ENV=test
+      - ENVIRONMENT=test
     links:
       - server
     ports:
