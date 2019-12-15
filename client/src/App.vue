@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    TEST env
+    {{ JSON.stringify(process.env) }}TEST env
     <Navigation></Navigation>
     <router-view></router-view>
   </div>
