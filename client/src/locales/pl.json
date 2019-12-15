@@ -9,15 +9,34 @@
   "landingContent": {
     "contentChoose": {
       "title": "Wybierz swoją ścieżkę",
-      "subtitle": "Jesteśmy tu dla Ciebie abyś mógł być na bieżąco z najnowszymi narzędziami. Jedynie czego potrzebujemy to abyś wybrał drogę w której czujesz się najlepiej",
+      "subtitle": "Jesteśmy tu dla Ciebie abyś mógł być na bieżąco z najnowszymi narzędziami.",
+      "subtitle2": "Jedynie czego potrzebujemy to abyś wybrał drogę w której czujesz się najlepiej",
       "lastUpdated": "Ostatnio zaktualizowane",
       "mostStars": "Najbardziej lubiane",
       "mostDownloads": "Najwięcej pobrań"
     },
-    "feedbackForm": {
-      "title": "Masz nam coś ciekawego do przekazania?",
-      "subtitle": "Send us your ideas"
+    "popularTech": {
+      "title": "Znajdź najbardziej popularne technologie na świecie",
+      "subtitle": "Sprawdź co jest napotężniejsze w każdej z dziedzin programowania",
+      "toolCounter": "Narzędzia: ",
+      "frontend": {
+        "javascriptDesc": "JavaScript jest skryptowym językiem programowania, stworzonym w latach 90-tych przez Brendana Eicha i firmę Netscape. Jest to język wykorzystywany na stronach WWW. Same skrypty odpowiadają za interaktywność poprzez reagowanie na zdarzenia, sprawdzanie formularzy czy za tworzenie elementów służących do nawigacji."
+      }
+    },
+    "contactForm": {
+      "title": "Chciałbyś nam coś powiedzieć?",
+      "subTitle": "Wyślij nam swoje pomysły i opinie!"
     }
+  },
+  "addTool-page": {
+    "button": "Dodaj repozytorium",
+    "logoTitle": "Dostępne logotypy",
+    "repoSearchLabel": "Nazwa repozytorium"
+  },
+  "error-page": {
+    "errorSubTitle": "Strony nie znaleziono",
+    "errorAction": "Przepraszamy, strona której szukasz nie istnieje w naszej bazie danych! Kliknij przycisk i wróć do naszej strony głównej",
+    "button": "Powrót"
   },
   "menu#1": "Strona Główna",
   "menu#2": "O Nas",

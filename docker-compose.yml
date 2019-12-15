@@ -4,22 +4,24 @@ services:
     build:
       context: ./server
     command: node src/server.js
-    container_name: TST_api
+    container_name: PROD_api
     environment:
-      - PORT=4000
+      - PORT=4001
       - VIRTUAL_HOST=2000
+      - API_KEY_GOOGLE=${API_KEY_GOOGLE}
+      - CSE_ID_GOOGLE=${CSE_ID_GOOGLE}
     ports:
-      - 4000:4000
+      - 4001:4000
     restart: always
     volumes:
       - ./server/src:/app/server/src
   client:
     build:
       context: ./client
-    container_name: TST_client
+    container_name: PROD_client
     links:
       - server
     ports:
-      - 81:80
-      - 70:443
+      - 80:80
+      - 443:443
     restart: always

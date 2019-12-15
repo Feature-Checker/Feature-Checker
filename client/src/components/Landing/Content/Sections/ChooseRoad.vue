@@ -2,7 +2,11 @@
   <section class="choose-road">
     <div class="title-box wrapper">
       <h2>{{ $t("landingContent.contentChoose.title") }}</h2>
-      <h4>{{ $t("landingContent.contentChoose.subtitle") }}</h4>
+      <h4>
+        {{ $t("landingContent.contentChoose.subtitle") }}
+        <br />
+        {{ $t("landingContent.contentChoose.subtitle2") }}
+      </h4>
     </div>
     <section-Frontend></section-Frontend>
     <section-Backend></section-Backend>
@@ -28,28 +32,6 @@ $itemContentPadding: 10px;
 
 section.choose-road {
   min-height: 100vh;
-  .title-box {
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    h2 {
-      font-size: 3em;
-    }
-    h2,
-    h4 {
-      color: $navy;
-      text-align: center;
-    }
-    h4 {
-      font-size: 16px;
-      font-weight: 400;
-      margin: 20px 0 0 0;
-      @include xl {
-        width: 37%;
-      }
-    }
-  }
 }
 section.chooseRoad-item {
   &.left,

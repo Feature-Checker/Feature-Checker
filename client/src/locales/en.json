@@ -9,15 +9,34 @@
   "landingContent": {
     "contentChoose": {
       "title": "Choose your lovely path",
-      "subtitle": "We are here for you so that you can be up to date with the latest tools. All we need is that you choose the way you feel best",
+      "subtitle": "We are here for you so that you can be up to date with the latest tools.",
+      "subtitle2": "All we need is that you choose the way you feel best",
       "lastUpdated": "Last updated",
       "mostStars": "Most liked",
       "mostDownloads": "Most downloads"
     },
-    "feedbackForm": {
-      "title": "You have something interesting to say?",
-      "subtitle": "Send us your ideas"
+    "popularTech": {
+      "title": "Find most popular technology in world",
+      "subtitle": "Check what is most powerful in every programming path",
+      "toolCounter": "Tools: ",
+      "frontend": {
+        "javascriptDesc": "JavaScript is a scripting programming language created in the 90's by Brendan Eich and Netscape. It is a language used on websites. The scripts themselves are responsible for interactivity by responding to events, checking forms or creating elements for navigation."
+      }
+    },
+    "contactForm": {
+      "title": "Would you like to tell us something?",
+      "subTitle": "Send us your ideas and opinions!"
     }
+  },
+  "addTool-page": {
+    "button": "Add repo",
+    "logoTitle": "Available logos",
+    "repoSearchLabel": "Repo name"
+  },
+  "error-page": {
+    "errorSubTitle": "Page not found",
+    "errorAction": "We’re sorry, the page you have looked for does not exist in our database! Click the button and comeback to Our home page",
+    "button": "Comeback"
   },
   "menu#1": "Home",
   "menu#2": "About",
