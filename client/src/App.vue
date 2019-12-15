@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    {{ JSON.stringify(process.env) }}TEST env
+    {{ JSON.stringify(process) }}TEST env
     <Navigation></Navigation>
     <router-view></router-view>
   </div>
@@ -13,7 +13,9 @@ export default {
   components: {
     Navigation
   },
-  data: () => ({}),
+  data: () => ({
+    process: process.env
+  }),
 };
 </script>
 
