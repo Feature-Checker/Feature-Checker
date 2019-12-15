@@ -1,0 +1,28 @@
+version: "3"
+services:
+  server:
+    build:
+      context: ./server
+    command: node src/server.js
+    container_name: TST_api
+    environment:
+      - PORT=4000
+      - VIRTUAL_HOST=2000
+      - API_KEY_GOOGLE = ${API_KEY_GOOGLE}
+      - CSE_ID_GOOGLE = ${CSE_ID_GOOGLE}
+    ports:
+      - 4000:4000
+    restart: always
+    volumes:
+      - ./server/src:/app/server/src
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.test
+    container_name: TST_client
+    links:
+      - server
+    ports:
+      - 81:80
+      - 70:443
+    restart: always
