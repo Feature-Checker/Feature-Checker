@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    TEST env
     <Navigation></Navigation>
     <router-view></router-view>
   </div>
