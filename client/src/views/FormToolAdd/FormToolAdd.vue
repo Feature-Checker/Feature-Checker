@@ -1,18 +1,13 @@
 <template>
   <section class="add-tool">
     <div class="form-box">
-      <form action>
+      <form action onSubmit="return false;">
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
-        <input type="text" id="startAnimation" />
+        <input type="text" id="startAnimation" @keyup.enter="typingAnimation" />
         <button type="button" class="btn purple" @click="typingAnimation">
           <i class="fas fa-search"></i>
         </button>
-        <div class="lds-ring" id="lds-ring">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <LoadingIcon />
         <div class="logo-container">
           <p>{{$t("addTool-page.logoTitle")}}</p>
           <div class="logos">
@@ -33,7 +28,12 @@
 </template>
 
 <script>
+import LoadingIcon from "@/components/Globals/LoadingIcon.vue";
+
 export default {
+  components: {
+    LoadingIcon
+  },
   data() {
     return {
       selectedLogo: "",
@@ -181,49 +181,6 @@ section.add-tool {
         }
       }
     }
-  }
-}
-
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 35px;
-  right: 15px;
-  display: none;
-  &.activeAnimation {
-    display: block;
-  }
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  margin: 8px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
-}
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 </style>
