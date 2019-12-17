@@ -3,7 +3,10 @@
     <div class="form-box">
       <form action>
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
-        <input type="text" id="startAnimation" v-on:keyup.once="typingAnimation" />
+        <input type="text" id="startAnimation" />
+        <button type="button" class="btn purple" @click="typingAnimation">
+          <i class="fas fa-search"></i>
+        </button>
         <div class="lds-ring" id="lds-ring">
           <div></div>
           <div></div>
@@ -59,25 +62,24 @@ export default {
       this.selectedLogo = logo.logoImage;
       this.selected = logo.id;
     },
-    typingAnimation() {
+    typingAnimation(event) {
       const input = document.getElementById("startAnimation");
       const animationDiv = document.querySelector("#lds-ring");
-      input.addEventListener("keyup", function() {
-        if (input.value !== "") {
-          animationDiv.classList.add("activeAnimation");
-          input.classList.add("searchError");
-        } else {
-          animationDiv.classList.remove("activeAnimation");
-        }
-        if (input.value === "facebook/react") {
-          input.classList.add("searchSuccess");
-          input.classList.remove("searchError");
-          animationDiv.classList.remove("activeAnimation");
-        } else if (input.value === "") {
-          input.classList.remove("searchSuccess");
-          input.classList.remove("searchError");
-        }
-      });
+      if (input.value !== "") {
+        animationDiv.classList.add("activeAnimation");
+        input.classList.add("searchError");
+      } else {
+        animationDiv.classList.remove("activeAnimation");
+      }
+      if (input.value === "facebook/react") {
+        input.classList.add("searchSuccess");
+        input.classList.remove("searchError");
+        animationDiv.classList.remove("activeAnimation");
+        event.preventDefault;
+      } else if (input.value === "") {
+        input.classList.remove("searchSuccess");
+        input.classList.remove("searchError");
+      }
     }
   },
   created() {
