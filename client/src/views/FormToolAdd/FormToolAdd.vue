@@ -85,11 +85,12 @@ export default {
       const input = document.getElementById("startAnimation");
       const isUrlValid = async () => {
         try {
-          await axios.get('/api/searchrepo', {
+          const result = await axios.get('/api/searchrepo', {
             params: {
               reponame: input.value
             }
           });
+          console.log(result.data)
           return true;
         } catch (err) {
           return false;
