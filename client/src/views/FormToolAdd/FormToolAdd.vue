@@ -88,10 +88,10 @@ export default {
         url += "https://github.com/";
         try {
           await axios.get(url);
-          console.log(`Valid URL: ${url}`);
+          // console.log(`Valid URL: ${url}`);
           return true;
         } catch (err) {
-          console.log(`Not a valid URL: ${url}`);
+          // console.log(`Not a valid URL: ${url}`);
           return false;
         }
       };
