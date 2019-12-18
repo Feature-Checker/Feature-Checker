@@ -3,7 +3,7 @@
     <div class="form-box">
       <form action onSubmit="return false;">
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
-        <input type="text" id="startAnimation" @keyup.enter="typingAnimation(); searchValidation()" />
+        <input type="text" id="startAnimation" @keyup.enter="typingAnimation();" />
         <button type="button" class="btn purple" @click="typingAnimation(); searchValidation()">
           <i class="fas fa-search"></i>
         </button>
@@ -82,23 +82,17 @@ export default {
     },
     searchValidation() {
       const axios = require("axios");
-
-      const isUrlValid = async url => {
-        // add logic to extract just two "words" between first slash
-        url += "https://github.com/";
+      const input = document.getElementById("startAnimation");
+      const isUrlValid = async () => {
+        url = `https://github.com/${input.value}`;
         try {
-          await axios.get(url);
-          // console.log(`Valid URL: ${url}`);
+          await axios.get(input.value);
           return true;
         } catch (err) {
-          // console.log(`Not a valid URL: ${url}`);
           return false;
         }
       };
-
-      isUrlValid("facebook/react");
-      isUrlValid("react");
-      isUrlValid("123sad/sa/d/sad/");
+      isUrlValid();
     }
   },
   created() {
