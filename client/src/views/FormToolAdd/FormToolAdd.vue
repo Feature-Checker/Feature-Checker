@@ -84,9 +84,12 @@ export default {
       const axios = require("axios");
       const input = document.getElementById("startAnimation");
       const isUrlValid = async () => {
-        const url = `https://github.com/${input.value}`;
         try {
-          await axios.get(url);
+          await axios.get('/api/searchrepo', {
+            params: {
+              reponame: input.value
+            }
+          });
           return true;
         } catch (err) {
           return false;
