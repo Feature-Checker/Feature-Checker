@@ -3,8 +3,8 @@
     <div class="form-box">
       <form action onSubmit="return false;">
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
-        <input type="text" id="startAnimation" @keyup.enter="typingAnimation" />
-        <button type="button" class="btn purple" @click="typingAnimation">
+        <input type="text" id="startAnimation" @keyup.enter="typingAnimation(); searchValidation()" />
+        <button type="button" class="btn purple" @click="typingAnimation(); searchValidation()">
           <i class="fas fa-search"></i>
         </button>
         <LoadingIcon />
@@ -62,7 +62,7 @@ export default {
       this.selectedLogo = logo.logoImage;
       this.selected = logo.id;
     },
-    typingAnimation(event) {
+    typingAnimation() {
       const input = document.getElementById("startAnimation");
       const animationDiv = document.querySelector("#lds-ring");
       if (input.value !== "") {
@@ -75,11 +75,30 @@ export default {
         input.classList.add("searchSuccess");
         input.classList.remove("searchError");
         animationDiv.classList.remove("activeAnimation");
-        event.preventDefault;
       } else if (input.value === "") {
         input.classList.remove("searchSuccess");
         input.classList.remove("searchError");
       }
+    },
+    searchValidation() {
+      const axios = require("axios");
+
+      const isUrlValid = async url => {
+        // add logic to extract just two "words" between first slash
+        url += "https://github.com/";
+        try {
+          await axios.get(url);
+          console.log(`Valid URL: ${url}`);
+          return true;
+        } catch (err) {
+          console.log(`Not a valid URL: ${url}`);
+          return false;
+        }
+      };
+
+      isUrlValid("facebook/react");
+      isUrlValid("react");
+      isUrlValid("123sad/sa/d/sad/");
     }
   },
   created() {

@@ -3,16 +3,8 @@
     <div class="nav-content">
       <div class="nav-logo">
         <router-link :to="{ name: 'home' }">
-          <img
-            src="@/assets/images/logo/dev-logo-white.svg"
-            alt
-            class="logo-desktop"
-          />
-          <img
-            src="@/assets/images/logo/dev-sygnet.svg"
-            alt
-            class="logo-mobile"
-          />
+          <img src="@/assets/images/logo/dev-logo-contour.svg" alt class="logo-desktop" />
+          <img src="@/assets/images/logo/dev-sygnet.svg" alt class="logo-mobile" />
         </router-link>
       </div>
       <!-- <ul class="nav-links" :class="{ 'nav-active': navActive }">
