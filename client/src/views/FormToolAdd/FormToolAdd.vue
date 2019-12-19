@@ -1,6 +1,6 @@
 <template>
   <section class="add-tool">
-    <div class="form-box">
+    <div class="form-box wrapper">
       <form action onSubmit="return false;">
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
         <input type="text" id="startAnimation" @keyup.enter="typingAnimation();" />
@@ -118,13 +118,13 @@ export default {
 <style lang="scss">
 section.add-tool {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: $navy;
   display: flex;
   justify-content: center;
   align-items: center;
   .form-box {
-    width: 30%;
+    width: 100%;
     @include max-dv($md) {
       width: 80%;
     }
@@ -136,6 +136,9 @@ section.add-tool {
     }
     @include ipad(prol) {
       width: 60%;
+    }
+    @include land-sm {
+      margin-top: 150px;
     }
     form {
       display: flex;
@@ -179,7 +182,7 @@ section.add-tool {
           width: 100%;
           flex-wrap: wrap;
           img {
-            width: 15%;
+            width: 75px;
             margin: 10px 10px;
             padding: 10px 15px;
             cursor: pointer;
