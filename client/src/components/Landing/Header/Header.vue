@@ -81,22 +81,22 @@ header {
         z-index: 0;
         img.couple {
           position: absolute;
-          top: 50px;
+          top: 5%;
           left: 0px;
           width: 450px;
           opacity: 1;
           z-index: -1;
           transform: rotateY(180deg);
-          @include md {
-            width: 400px;
-            top: 400px;
-            left: -30px;
-          }
-          @include lg {
-            width: 500px;
-            top: 350px;
-            left: -30px;
-          }
+          // @include md {
+          //   width: 400px;
+          //   top: 400px;
+          //   left: -30px;
+          // }
+          // @include lg {
+          //   width: 500px;
+          //   top: 350px;
+          //   left: -30px;
+          // }
         }
       }
     }

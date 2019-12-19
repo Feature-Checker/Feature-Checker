@@ -83,16 +83,22 @@ export default {
     searchValidation() {
       const axios = require("axios");
       const input = document.getElementById("startAnimation");
+      const animationDiv = document.querySelector("#lds-ring");
       const isUrlValid = async () => {
         try {
-          const result = await axios.get('/api/searchrepo', {
+          const result = await axios.get("/api/searchrepo", {
             params: {
               reponame: input.value
             }
           });
-          console.log(result.data)
+          console.log(result.data);
+          input.classList.add("searchSuccess");
+          input.classList.remove("searchError");
+          animationDiv.classList.remove("activeAnimation");
           return true;
         } catch (err) {
+          input.classList.remove("searchSuccess");
+          input.classList.add("searchError");
           return false;
         }
       };
