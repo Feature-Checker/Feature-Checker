@@ -63,22 +63,22 @@ export default {
       this.selected = logo.id;
     },
     typingAnimation() {
-      const input = document.getElementById("startAnimation");
-      const animationDiv = document.querySelector("#lds-ring");
-      if (input.value !== "") {
-        animationDiv.classList.add("activeAnimation");
-        input.classList.add("searchError");
-      } else {
-        animationDiv.classList.remove("activeAnimation");
-      }
-      if (input.value === "facebook/react") {
-        input.classList.add("searchSuccess");
-        input.classList.remove("searchError");
-        animationDiv.classList.remove("activeAnimation");
-      } else if (input.value === "") {
-        input.classList.remove("searchSuccess");
-        input.classList.remove("searchError");
-      }
+      // const input = document.getElementById("startAnimation");
+      // const animationDiv = document.querySelector("#lds-ring");
+      // if (input.value !== "") {
+      //   animationDiv.classList.add("activeAnimation");
+      //   input.classList.add("searchError");
+      // } else {
+      //   animationDiv.classList.remove("activeAnimation");
+      // }
+      // if (input.value === "facebook/react") {
+      //   input.classList.add("searchSuccess");
+      //   input.classList.remove("searchError");
+      //   animationDiv.classList.remove("activeAnimation");
+      // } else if (input.value === "") {
+      //   input.classList.remove("searchSuccess");
+      //   input.classList.remove("searchError");
+      // }
     },
     searchValidation() {
       const axios = require("axios");
