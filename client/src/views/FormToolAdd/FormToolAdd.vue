@@ -92,7 +92,7 @@ export default {
             }
           });
           console.log(result.data);
-          if (result.data) {
+          if (isUrlValid) {
             input.classList.add("searchSuccess");
             input.classList.remove("searchError");
             animationDiv.classList.remove("activeAnimation");
