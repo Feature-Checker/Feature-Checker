@@ -92,13 +92,17 @@ export default {
             }
           });
           console.log(result.data);
-          input.classList.add("searchSuccess");
-          input.classList.remove("searchError");
-          animationDiv.classList.remove("activeAnimation");
+          if (result.data) {
+            input.classList.add("searchSuccess");
+            input.classList.remove("searchError");
+            animationDiv.classList.remove("activeAnimation");
+          } else {
+            input.classList.remove("searchSuccess");
+            input.classList.add("searchError");
+          }
+
           return true;
         } catch (err) {
-          input.classList.remove("searchSuccess");
-          input.classList.add("searchError");
           return false;
         }
       };
