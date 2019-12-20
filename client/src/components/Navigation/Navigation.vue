@@ -2,10 +2,7 @@
   <nav class="wrapper landingNavigation">
     <div class="nav-content">
       <div class="nav-logo">
-        <router-link :to="{ name: 'home' }">
-          <img src="@/assets/images/logo/dev-logo-white.svg" alt class="logo-desktop" />
-          <img src="@/assets/images/logo/dev-sygnet.svg" alt class="logo-mobile" />
-        </router-link>
+        <module-logo />
       </div>
       <!-- <ul class="nav-links" :class="{ 'nav-active': navActive }">
         <router-link to="/" class="link-item">
@@ -32,13 +29,14 @@
 
 <script>
 import LanguageSwitcher from "./LanguageSwitcher.vue";
-
+import Logo from "@/views/Globals/Logo.vue";
 // import { mixin as clickaway } from "vue-clickaway";
 
 export default {
   name: "Navigation",
   components: {
-    "module-langSwitcher": LanguageSwitcher
+    "module-langSwitcher": LanguageSwitcher,
+    "module-logo": Logo
   }
   // mixins: [clickaway],
   // data() {
@@ -77,21 +75,6 @@ nav.landingNavigation {
     .nav-logo {
       display: flex;
       align-items: center;
-
-      .logo-desktop {
-        width: 200px;
-        margin: 5px 20px 5px 0;
-        @include max-dv($md - 1) {
-          display: none;
-        }
-      }
-      .logo-mobile {
-        width: 35px;
-        margin: 5px 20px 5px 0;
-        @include min-dv($md) {
-          display: none;
-        }
-      }
     }
     .nav-links {
       list-style: none;

@@ -1,13 +1,15 @@
 <template>
   <section class="chooseRoad-item left frontend" :class="{ active: isActive }">
     <div class="wrapper">
-      <h2>Frontend</h2>
+      <router-link :to="{name: 'frontend'}">
+        <h2>Frontend</h2>
+      </router-link>
       <!-- TODO - Translacja -->
-      <span
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quas
+      <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quas
         porro eligendi nesciunt sit excepturi fuga, deleniti corrupti quia
-        reprehenderit?</span
-      >
+        reprehenderit?
+      </span>
       <div class="tools-summary" :class="{ active: isActive }">
         <div class="summary-item">
           <p>
@@ -55,13 +57,10 @@
           </ul>
         </div>
       </div>
-      <span
-        class="toggleHeight"
-        @click="isActive = !isActive"
-        :class="{ active: isActive }"
-        ><i class="fas fa-chevron-down"></i
-      ></span>
-      <img src="@/assets/images/utils/vectors/frontend.png" alt="" />
+      <span class="toggleHeight" @click="isActive = !isActive" :class="{ active: isActive }">
+        <i class="fas fa-chevron-down"></i>
+      </span>
+      <img src="@/assets/images/utils/vectors/frontend.png" alt />
     </div>
   </section>
 </template>

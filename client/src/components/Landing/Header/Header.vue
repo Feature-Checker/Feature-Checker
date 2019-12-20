@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="landing-header">
     <div class="wrapper">
       <div class="header-content">
         <div class="visual-side">
@@ -25,7 +25,7 @@
 export default {};
 </script>
 <style lang="scss">
-header {
+header.landing-header {
   height: 100vh;
   width: 100%;
   background: url("~@/assets/images/background/lp-header-bg.png");

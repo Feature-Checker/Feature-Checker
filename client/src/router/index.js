@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../components/Landing/Landing.vue";
 import AddTool from "../views/FormToolAdd/FormToolAdd.vue";
 import Error404 from "../views/Error404/Error.vue";
+
+import Frontend from "../views/Templates/Development/Frontend.vue";
 import i18n from "../i18n";
 Vue.use(VueRouter);
 
@@ -33,6 +35,11 @@ const routes = [
         path: "404",
         name: "404",
         component: Error404
+      },
+      {
+        path: "frontend",
+        name: "frontend",
+        component: Frontend
       },
       {
         path: "*",
