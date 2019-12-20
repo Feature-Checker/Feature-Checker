@@ -5,7 +5,7 @@
         <h2>{{ $t("landingContent.contactForm.title") }}</h2>
         <h4>{{ $t("landingContent.contactForm.subTitle") }}</h4>
       </div>
-      <form action>
+      <form>
         <div class="form-box boxShadow">
           <div class="contact-info">
             <label for>
@@ -30,7 +30,7 @@
               <textarea></textarea>
               <i class="fas fa-comment-alt"></i>
             </label>
-            <button class="btn purple">
+            <button type="button" class="btn purple">
               <i class="fas fa-paper-plane"></i>
             </button>
           </div>

@@ -65,6 +65,9 @@ export default {
         }
       ]
     };
+  },
+  created() {
+    document.title = "Dev Release | Frontend";
   }
 };
 </script>
