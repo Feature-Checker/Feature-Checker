@@ -86,6 +86,12 @@ export default {
       const animationDiv = document.querySelector("#lds-ring");
       const isUrlValid = async () => {
         try {
+          if([...input.value].filter(sign => sign === '/').length > 0) {
+            const [owner, reponame] = input.value.split('/');
+            input.value = `${owner}/${reponame}`;
+          } else {
+            throw { isValid: false }
+          }
           const result = await axios.get("/api/searchrepo", {
             params: {
               reponame: input.value
@@ -103,6 +109,7 @@ export default {
 
           return true;
         } catch (err) {
+          console.log(err)
           return false;
         }
       };
