@@ -12,10 +12,11 @@ export default {};
 
 <style lang="scss">
 header.development-header {
-  height: 75vh;
+  height: 50vh;
   width: 100%;
-  background-color: #20bf55;
-  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  background-color: #734ae8;
+  background-image: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
+
   padding-top: 100px;
   .name-box {
     height: 100%;

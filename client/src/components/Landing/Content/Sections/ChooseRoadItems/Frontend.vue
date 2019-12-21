@@ -1,8 +1,8 @@
 <template>
   <section class="chooseRoad-item left frontend" :class="{ active: isActive }">
     <div class="wrapper">
-      <router-link :to="{name: 'frontend'}">
-        <h2>Frontend</h2>
+      <router-link :to="{ name: 'frontend' }">
+        <h2>Frontend <i class="fas fa-angle-right"></i></h2>
       </router-link>
       <!-- TODO - Translacja -->
       <span>
@@ -57,7 +57,11 @@
           </ul>
         </div>
       </div>
-      <span class="toggleHeight" @click="isActive = !isActive" :class="{ active: isActive }">
+      <span
+        class="toggleHeight"
+        @click="isActive = !isActive"
+        :class="{ active: isActive }"
+      >
         <i class="fas fa-chevron-down"></i>
       </span>
       <img src="@/assets/images/utils/vectors/frontend.png" alt />

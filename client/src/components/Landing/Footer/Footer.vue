@@ -14,7 +14,7 @@
         </div>-->
         <div class="footer-brand">
           <module-logo />
-          <router-link :to="{name: 'addTool'}">
+          <router-link :to="{ name: 'addTool' }">
             <span>{{ appVersion }}</span>
           </router-link>
         </div>
@@ -22,19 +22,25 @@
           <nav class="footer-item">
             <h3>Frontend</h3>
             <ul>
-              <li v-for="item in frontendItems" :key="item.title">{{ item.title }}</li>
+              <li v-for="item in frontendItems" :key="item.title">
+                {{ item.title }}
+              </li>
             </ul>
           </nav>
           <nav class="footer-item">
             <h3>Backend</h3>
             <ul>
-              <li v-for="item in backendItems" :key="item.title">{{ item.title }}</li>
+              <li v-for="item in backendItems" :key="item.title">
+                {{ item.title }}
+              </li>
             </ul>
           </nav>
           <nav class="footer-item">
             <h3>Design</h3>
             <ul>
-              <li v-for="item in designItems" :key="item.title">{{ item.title }}</li>
+              <li v-for="item in designItems" :key="item.title">
+                {{ item.title }}
+              </li>
             </ul>
           </nav>
         </div>
@@ -111,12 +117,7 @@ export default {
 
 <style lang="scss">
 footer.landing-footer {
-  background: rgb(207, 83, 249);
-  background: linear-gradient(
-    45deg,
-    rgba(207, 83, 249, 1) 0%,
-    rgba(87, 64, 252, 1) 100%
-  );
+  background: $clay;
   margin-top: 100px;
   padding: 30px 0;
   height: fit-content;

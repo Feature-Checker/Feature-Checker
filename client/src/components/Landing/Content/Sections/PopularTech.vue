@@ -101,7 +101,7 @@ section.popularTechnology {
           text-align: center;
           font-size: 1.3em;
         }
-        button {
+        a {
           margin-top: 10px;
           cursor: pointer;
         }
@@ -133,7 +133,7 @@ section.popularTechnology {
     .owl-dot {
       &.active {
         span {
-          background: $hitPink;
+          background: $purpleMedium;
         }
       }
       span {

@@ -2,7 +2,7 @@
   <section class="chooseRoad-item right backend" :class="{ active: isActive }">
     <div class="wrapper">
       <div class="title">
-        <h2>Backend</h2>
+        <h2>Backend <i class="fas fa-angle-right"></i></h2>
         <!-- TODO - Translacja -->
         <span
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt

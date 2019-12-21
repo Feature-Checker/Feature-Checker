@@ -1,7 +1,7 @@
 <template>
   <section class="chooseRoad-item left design" :class="{ active: isActive }">
     <div class="wrapper">
-      <h2>Design</h2>
+      <h2>Design <i class="fas fa-angle-right"></i></h2>
       <!-- TODO - Translacja -->
       <span
         >Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quas

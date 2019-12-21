@@ -3,16 +3,24 @@
     <header-section />
     <main>
       <div class="wrapper">
-        <h3 class="section-title">{{$t("development.frontend.title")}}</h3>
-        <p class="text">{{$t("development.frontend.titleContent")}}</p>
+        <h3 class="section-title">{{ $t("development.frontend.title") }}</h3>
+        <p class="text">{{ $t("development.frontend.titleContent") }}</p>
         <div class="popular-tech">
-          <h3 class="section-title middle">{{$t("development.frontend.popular-technology.title")}}</h3>
+          <h3 class="section-title middle">
+            {{ $t("development.frontend.popular-technology.title") }}
+          </h3>
           <div class="tech-box">
-            <div class="box-item" v-for="tech in technologies" :key="tech.version">
+            <div
+              class="box-item"
+              v-for="tech in technologies"
+              :key="tech.version"
+            >
               <img class="tech-logo" :src="tech.logo" alt />
-              <span class="tech-name">{{tech.name}}</span>
-              <span class="tech-version">{{tech.version}}</span>
-              <button class="btn purple">{{$t("landingHeader.button")}}</button>
+              <span class="tech-name">{{ tech.name }}</span>
+              <span class="tech-version">{{ tech.version }}</span>
+              <button class="btn purple">
+                {{ $t("landingHeader.button") }}
+              </button>
             </div>
           </div>
         </div>
@@ -107,6 +115,7 @@ export default {
           text-transform: uppercase;
           color: $clay;
           font-family: $poppins;
+          font-weight: 600;
         }
         .tech-version {
           color: $navy;
