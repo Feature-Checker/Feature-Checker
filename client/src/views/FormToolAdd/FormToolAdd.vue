@@ -79,13 +79,7 @@ export default {
               reponame: input.value
             }
           });
-          const photo = await axios.get("/api/image", {
-            params: {
-              reponame: input.value
-            }
-          });
           console.log(result.data.isValid);
-          console.log(photo.data);
           if (result.data.isValid) {
             input.classList.add("searchSuccess");
             input.classList.remove("searchError");
