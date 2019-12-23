@@ -80,9 +80,9 @@ export default {
             }
           });
           console.log(result.data);
-          console.log(result.data.length);
           for (let i = 0; i < result.data.length; i++) {
-            console.log(i);
+            this.repoImages.push(result.data(i));
+            console.log(this.repoImages);
           }
           return true;
         } catch (err) {
