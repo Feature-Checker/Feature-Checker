@@ -62,6 +62,33 @@ export default {
       this.selectedLogo = logo.logoImage;
       this.selected = logo.id;
     },
+    imageSearch() {
+      const axios = require("axios");
+      const input = document.getElementById("startAnimation");
+      const animationDiv = document.querySelector("#lds-ring");
+      const isUrlValid = async () => {
+        try {
+          if ([...input.value].filter(sign => sign === "/").length > 0) {
+            const [owner, reponame] = input.value.split("/");
+            input.value = `${owner}/${reponame}`;
+          } else {
+            throw { isValid: false };
+          }
+          const result = await axios.get("/api/image", {
+            params: {
+              search: input.value
+            }
+          });
+          console.log(search.data);
+
+          return true;
+        } catch (err) {
+          console.log(err);
+          return false;
+        }
+      };
+      isUrlValid();
+    },
     searchValidation() {
       const axios = require("axios");
       const input = document.getElementById("startAnimation");
