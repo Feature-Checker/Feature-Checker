@@ -97,8 +97,8 @@ export default {
               reponame: input.value
             }
           });
-          console.log(result.data);
-          if (result.data) {
+          console.log(result.data.isValid);
+          if (result.data.isValid) {
             input.classList.add("searchSuccess");
             input.classList.remove("searchError");
             animationDiv.classList.remove("activeAnimation");
