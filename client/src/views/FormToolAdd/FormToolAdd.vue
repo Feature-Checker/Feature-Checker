@@ -4,9 +4,14 @@
       <form action onSubmit="return false;">
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
         <input type="text" id="startAnimation" />
-        <button type="button" class="btn purple" @click=" searchValidation(); imageSearch()">
-          <i class="fas fa-search"></i>
-        </button>
+        <div class="button-box">
+          <button type="button" class="btn purple" @click=" searchValidation(); imageSearch()">
+            <i class="fas fa-search"></i>
+          </button>
+          <button type="button" class="btn hit-pink" @click=" clearRepo()">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
         <LoadingIcon />
         <div class="logo-container">
           <p>{{$t("addTool-page.logoTitle")}}</p>
@@ -127,6 +132,11 @@ export default {
         }
       };
       isUrlValid();
+    },
+    clearRepo() {
+      const input = document.getElementById("startAnimation");
+      input.value = "";
+      this.repoImages = [];
     }
   },
   created() {
@@ -186,8 +196,18 @@ section.add-tool {
           border-bottom: 2px solid red;
         }
       }
+      .button-box {
+        display: flex;
+        justify-content: center;
+        button {
+          margin: 0 30px;
+          svg {
+            font-size: 1.6em;
+          }
+        }
+      }
       button {
-        margin: 20px auto;
+        margin: 0 auto;
       }
       .logo-container {
         margin: 50px 0;
@@ -202,7 +222,7 @@ section.add-tool {
           width: 100%;
           flex-wrap: wrap;
           img {
-            width: 75px;
+            width: 100px;
             margin: 10px 10px;
             padding: 10px 15px;
             cursor: pointer;
