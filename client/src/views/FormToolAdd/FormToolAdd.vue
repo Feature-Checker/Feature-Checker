@@ -81,9 +81,7 @@ export default {
           });
           this.repoImages = [];
           // console.log(result.data);
-          result.data.forEach(element => {
-            this.repoImages.push(result.data.url);
-          });
+          result.data.forEach(this.repoImages.push(result.data.url));
           // for (let i = 0; i < result.data.length; i++) {
 
           // }
