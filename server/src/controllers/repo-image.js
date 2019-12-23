@@ -6,7 +6,7 @@ const fetchImage = async(req, res) => {
         console.log(req.params)
         console.log(process.env)
         const searchPhrase = `${req.query.search} logo`
-        const { API_KEY, CSE_ID } = process.env;
+        const { API_KEY_GOOGLE, CSE_ID_GOOGLE } = process.env;
         const client = new imageSearch(CSE_ID, API_KEY);
         const options = { page: 1 };
         const searchResult = await client.search(searchPhrase, options)
