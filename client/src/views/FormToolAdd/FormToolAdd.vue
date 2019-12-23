@@ -80,7 +80,7 @@ export default {
             }
           });
           console.log(result.data);
-          this.repoImages = result.data;
+          this.repoImages = result.data.url;
           console.log(this.repoImages);
           return true;
         } catch (err) {
