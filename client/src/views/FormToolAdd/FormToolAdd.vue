@@ -4,7 +4,7 @@
       <form action onSubmit="return false;">
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
         <input type="text" id="startAnimation" />
-        <button type="button" class="btn purple" @click=" searchValidation()">
+        <button type="button" class="btn purple" @click=" searchValidation(); imageSearch()">
           <i class="fas fa-search"></i>
         </button>
         <LoadingIcon />
@@ -65,7 +65,6 @@ export default {
     imageSearch() {
       const axios = require("axios");
       const input = document.getElementById("startAnimation");
-      const animationDiv = document.querySelector("#lds-ring");
       const isUrlValid = async () => {
         try {
           if ([...input.value].filter(sign => sign === "/").length > 0) {
@@ -79,7 +78,7 @@ export default {
               search: input.value
             }
           });
-          console.log(search.data);
+          console.log(result.data);
 
           return true;
         } catch (err) {
