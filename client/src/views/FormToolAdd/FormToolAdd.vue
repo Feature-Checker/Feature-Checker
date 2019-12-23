@@ -3,7 +3,7 @@
     <div class="form-box wrapper">
       <form action onSubmit="return false;">
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
-        <input type="text" id="startAnimation" />
+        <input type="text" id="startAnimation" @keyup.enter="searchValidation(); imageSearch()" />
         <div class="button-box">
           <button type="button" class="btn purple" @click=" searchValidation(); imageSearch()">
             <i class="fas fa-search"></i>
