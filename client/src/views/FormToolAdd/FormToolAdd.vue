@@ -38,6 +38,7 @@ export default {
     return {
       selectedLogo: "",
       selected: null,
+      repoImages: [],
       toolLogos: [
         {
           id: 1,
@@ -79,7 +80,8 @@ export default {
             }
           });
           console.log(result.data);
-
+          this.repoImages = result.data;
+          console.log(this.repoImages);
           return true;
         } catch (err) {
           console.log(err);
