@@ -14,7 +14,7 @@
             <img
               alt
               :src="logo.logoImage"
-              v-for="logo in toolLogos"
+              v-for="logo in repoImages"
               @click="handleSelectItem(logo)"
               v-bind:key="logo.id"
               :class="{ active: selected == logo.id }"
@@ -81,7 +81,7 @@ export default {
           });
           console.log(result.data);
           for (let i = 0; i < result.data.length; i++) {
-            this.repoImages.push(result.data[i].url);
+            this.repoImages.url.push(result.data[i].url);
           }
           console.log(this.repoImages);
           return true;
