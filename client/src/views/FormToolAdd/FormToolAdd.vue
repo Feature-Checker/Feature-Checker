@@ -137,6 +137,8 @@ export default {
       const input = document.getElementById("startAnimation");
       input.value = "";
       this.repoImages = [];
+      input.classList.remove("searchSuccess");
+      input.classList.remove("searchError");
     }
   },
   created() {
