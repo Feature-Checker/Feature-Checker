@@ -229,7 +229,7 @@ section.add-tool {
           flex-wrap: wrap;
           img {
             width: 100px;
-            height: 75px;
+            height: 100%;
             margin: 10px 10px;
             padding: 10px 15px;
             cursor: pointer;
