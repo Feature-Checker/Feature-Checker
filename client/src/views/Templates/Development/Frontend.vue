@@ -6,21 +6,13 @@
         <h3 class="section-title">{{ $t("development.frontend.title") }}</h3>
         <p class="text">{{ $t("development.frontend.titleContent") }}</p>
         <div class="popular-tech">
-          <h3 class="section-title middle">
-            {{ $t("development.frontend.popular-technology.title") }}
-          </h3>
+          <h3 class="section-title middle">{{ $t("development.frontend.popular-technology.title") }}</h3>
           <div class="tech-box">
-            <div
-              class="box-item"
-              v-for="tech in technologies"
-              :key="tech.version"
-            >
+            <div class="box-item" v-for="tech in technologies" :key="tech.id">
               <img class="tech-logo" :src="tech.logo" alt />
               <span class="tech-name">{{ tech.name }}</span>
               <span class="tech-version">{{ tech.version }}</span>
-              <button class="btn purple">
-                {{ $t("landingHeader.button") }}
-              </button>
+              <button class="btn purple">{{ $t("landingHeader.button") }}</button>
             </div>
           </div>
         </div>
@@ -44,32 +36,38 @@ export default {
         {
           logo: require("@/assets/images/utils/logos/javascript.svg"),
           name: "JavaScript",
-          version: "1.0.0"
+          version: "1.0.0",
+          id: "1"
         },
         {
           logo: require("@/assets/images/utils/logos/vuejs.svg"),
           name: "Vue",
-          version: "1.0.0"
+          version: "1.0.0",
+          id: "2"
         },
         {
           logo: require("@/assets/images/utils/logos/angular.svg"),
           name: "Angular",
-          version: "1.0.0"
+          version: "1.0.0",
+          id: "3"
         },
         {
           logo: require("@/assets/images/utils/logos/javascript.svg"),
           name: "JavaScript",
-          version: "1.0.0"
+          version: "1.0.0",
+          id: "4"
         },
         {
           logo: require("@/assets/images/utils/logos/javascript.svg"),
           name: "JavaScript",
-          version: "1.0.0"
+          version: "1.0.0",
+          id: "5"
         },
         {
           logo: require("@/assets/images/utils/logos/javascript.svg"),
           name: "JavaScript",
-          version: "1.0.0"
+          version: "1.0.0",
+          id: "6"
         }
       ]
     };
