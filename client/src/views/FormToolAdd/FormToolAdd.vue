@@ -81,9 +81,12 @@ export default {
           });
           this.repoImages = [];
           // console.log(result.data);
-          for (let i = 0; i < result.data.length; i++) {
-            this.repoImages.push(result.data[i].url);
-          }
+          result.data.forEach(element => {
+            this.repoImages.push(result.data.url);
+          });
+          // for (let i = 0; i < result.data.length; i++) {
+
+          // }
           // console.log(this.repoImages);
           return true;
         } catch (err) {
@@ -110,7 +113,7 @@ export default {
               reponame: input.value
             }
           });
-          console.log(result.data.isValid);
+          // console.log(result.data.isValid);
           if (result.data.isValid) {
             input.classList.add("searchSuccess");
             input.classList.remove("searchError");
