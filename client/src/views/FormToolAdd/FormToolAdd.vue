@@ -79,11 +79,12 @@ export default {
               search: input.value
             }
           });
-          console.log(result.data);
+          this.repoImages = [];
+          // console.log(result.data);
           for (let i = 0; i < result.data.length; i++) {
             this.repoImages.push(result.data[i].url);
           }
-          console.log(this.repoImages);
+          // console.log(this.repoImages);
           return true;
         } catch (err) {
           console.log(err);
