@@ -155,6 +155,10 @@ section.add-tool {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 100px;
+  @include max-dv($md - 1) {
+    padding-top: 200px;
+  }
   .form-box {
     width: 100%;
     @include max-dv($md) {
@@ -225,12 +229,13 @@ section.add-tool {
           flex-wrap: wrap;
           img {
             width: 100px;
+            height: 75px;
             margin: 10px 10px;
             padding: 10px 15px;
             cursor: pointer;
             transition: 0.2s;
             @include max-dv($md) {
-              width: 20%;
+              width: 48%;
               margin: 3px;
             }
             @include ipad(ipadp) {
@@ -242,7 +247,7 @@ section.add-tool {
               margin: 3px;
             }
             @include ipad(prol) {
-              width: 10%;
+              width: 15%;
             }
             &.active {
               padding: 10px 15px;
