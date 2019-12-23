@@ -80,8 +80,10 @@ export default {
             }
           });
           console.log(result.data);
-          this.repoImages = result.element.url;
-          console.log(this.repoImages);
+          console.log(result.data.length);
+          for (let i = 0; i < result.data.length; i++) {
+            console.log(i);
+          }
           return true;
         } catch (err) {
           console.log(err);
