@@ -25,7 +25,10 @@
     },
     "contactForm": {
       "title": "Would you like to tell us something?",
-      "subTitle": "Send us your ideas and opinions!"
+      "subTitle": "Send us your ideas and opinions!",
+      "nameForm": "Name",
+      "titleForm": "Title",
+      "messageForm": "Message"
     }
   },
   "addTool-page": {

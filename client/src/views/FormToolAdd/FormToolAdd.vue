@@ -86,11 +86,11 @@ export default {
       const animationDiv = document.querySelector("#lds-ring");
       const isUrlValid = async () => {
         try {
-          if([...input.value].filter(sign => sign === '/').length > 0) {
-            const [owner, reponame] = input.value.split('/');
+          if ([...input.value].filter(sign => sign === "/").length > 0) {
+            const [owner, reponame] = input.value.split("/");
             input.value = `${owner}/${reponame}`;
           } else {
-            throw { isValid: false }
+            throw { isValid: false };
           }
           const result = await axios.get("/api/searchrepo", {
             params: {
@@ -98,7 +98,7 @@ export default {
             }
           });
           console.log(result.data);
-          if (isUrlValid) {
+          if (result.data) {
             input.classList.add("searchSuccess");
             input.classList.remove("searchError");
             animationDiv.classList.remove("activeAnimation");
@@ -109,7 +109,7 @@ export default {
 
           return true;
         } catch (err) {
-          console.log(err)
+          console.log(err);
           return false;
         }
       };
