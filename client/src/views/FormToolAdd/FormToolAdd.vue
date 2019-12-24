@@ -66,7 +66,6 @@ export default {
   methods: {
     handleSelectItem(logo) {
       this.selectedLogo = logo.logoImage;
-      this.selected = logo.id;
     },
     imageSearch() {
       const axios = require("axios");
@@ -88,6 +87,8 @@ export default {
           // console.log(result.data);
           for (let i = 0; i < result.data.length; i++) {
             this.repoImages.push(result.data[i].url);
+            this.selected = result.data[i].id;
+            console.log(this.selected);
           }
           // console.log(this.repoImages);
           return true;
