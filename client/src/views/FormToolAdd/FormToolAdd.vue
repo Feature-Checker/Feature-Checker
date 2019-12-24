@@ -81,7 +81,6 @@ export default {
     searchValidation() {
       const axios = require("axios");
       const input = document.getElementById("startAnimation");
-      const animationDiv = document.querySelector("#lds-ring");
       const isUrlValid = async () => {
         try {
           if ([...input.value].filter(sign => sign === "/").length > 0) {
