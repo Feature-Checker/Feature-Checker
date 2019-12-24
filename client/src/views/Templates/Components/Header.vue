@@ -14,8 +14,12 @@ export default {};
 header.development-header {
   height: 50vh;
   width: 100%;
-  background-color: #734ae8;
-  background-image: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
+  background: rgb(46, 53, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(46, 53, 83, 1) 0%,
+    rgba(37, 39, 66, 1) 100%
+  );
 
   padding-top: 100px;
   .name-box {
