@@ -232,6 +232,16 @@ section.add-tool {
               background: rgba(255, 255, 255, 0.3);
               border-radius: 10px;
             }
+            &:hover {
+              padding: 10px 15px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 10px;
+            }
+            &:active {
+              padding: 10px 15px;
+              background: rgba(255, 255, 255, 0.6);
+              border-radius: 10px;
+            }
           }
         }
       }
