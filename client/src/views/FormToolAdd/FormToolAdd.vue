@@ -97,11 +97,12 @@ export default {
           if (result.data.isValid) {
             input.classList.add("searchSuccess");
             input.classList.remove("searchError");
+            this.imageSearch();
           } else {
             input.classList.remove("searchSuccess");
             input.classList.add("searchError");
           }
-          this.imageSearch();
+
           return true;
         } catch (err) {
           console.log(err);
