@@ -18,7 +18,7 @@
           <div class="logos">
             <img
               alt
-              :src="logo.logoImage"
+              :src="logo"
               v-for="(logo, id) in repoImages"
               @click="selectItem(id)"
               v-bind:key="id"
