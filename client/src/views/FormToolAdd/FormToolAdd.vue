@@ -33,32 +33,12 @@
 </template>
 
 <script>
-import LoadingIcon from "@/components/Globals/LoadingIcon.vue";
-
 export default {
-  components: {
-    LoadingIcon
-  },
   data() {
     return {
-      selectedLogo: "",
       selected: null,
       activeItem: null,
-      repoImages: [],
-      toolLogos: [
-        {
-          logoImage: require("@/assets/images/utils/logos/vuejs.svg"),
-          active: false
-        },
-        {
-          logoImage: require("@/assets/images/utils/logos/react.svg"),
-          active: false
-        },
-        {
-          logoImage: require("@/assets/images/utils/logos/angular.svg"),
-          active: false
-        }
-      ]
+      repoImages: []
     };
   },
   methods: {
@@ -81,14 +61,15 @@ export default {
               search: input.value
             }
           });
+
           this.repoImages = [];
-          // console.log(result.data);
+          this.activeItem = null;
+
           for (let i = 0; i < result.data.length; i++) {
             this.repoImages.push(result.data[i].url);
             this.selected = result.data[i].id;
-            console.log(this.selected);
           }
-          // console.log(this.repoImages);
+
           return true;
         } catch (err) {
           console.log(err);
@@ -118,7 +99,6 @@ export default {
           if (result.data.isValid) {
             input.classList.add("searchSuccess");
             input.classList.remove("searchError");
-            animationDiv.classList.remove("activeAnimation");
           } else {
             input.classList.remove("searchSuccess");
             input.classList.add("searchError");
