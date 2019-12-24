@@ -18,6 +18,10 @@
         </div>
       </div>
     </main>
+    <!-- <div>
+      <button @click="changeNumber()">asdasdasd</button>
+      <span id="number">{{number}}</span>
+    </div>-->
     <footer-section />
   </section>
 </template>
@@ -32,6 +36,7 @@ export default {
   },
   data() {
     return {
+      // number: 0,
       technologies: [
         {
           logo: require("@/assets/images/utils/logos/javascript.svg"),
@@ -72,6 +77,19 @@ export default {
       ]
     };
   },
+  // methods: {
+  //   changeNumber() {
+  //     this.number += 2;
+  //     if (this.number == 10) {
+  //       this.colorNumber();
+  //     }
+  //   },
+  //   colorNumber() {
+  //     const number = document.getElementById("number");
+
+  //     number.style.color = "blue";
+  //   }
+  // },
   created() {
     document.title = "Dev Release | Frontend";
   }

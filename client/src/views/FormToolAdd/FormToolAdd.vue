@@ -3,16 +3,15 @@
     <div class="form-box wrapper">
       <form action onSubmit="return false;">
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
-        <input type="text" id="startAnimation" @keyup.enter="searchValidation(); imageSearch()" />
+        <input type="text" id="startAnimation" @keyup.enter="searchValidation()" />
         <div class="button-box">
-          <button type="button" class="btn purple" @click=" searchValidation(); imageSearch()">
+          <button type="button" class="btn purple" @click=" searchValidation()">
             <i class="fas fa-search"></i>
           </button>
           <button type="button" class="btn hit-pink" @click=" clearRepo()">
             <i class="fas fa-trash-alt"></i>
           </button>
         </div>
-        <LoadingIcon />
         <div class="logo-container">
           <p>{{$t("addTool-page.logoTitle")}}</p>
           <div class="logos">
@@ -102,7 +101,7 @@ export default {
             input.classList.remove("searchSuccess");
             input.classList.add("searchError");
           }
-
+          this.imageSearch();
           return true;
         } catch (err) {
           console.log(err);
