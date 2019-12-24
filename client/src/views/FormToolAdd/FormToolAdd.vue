@@ -19,10 +19,10 @@
             <img
               alt
               :src="logo"
-              v-for="logo in repoImages"
-              @click="handleSelectItem(logo)"
-              v-bind:key="logo.id"
-              :class="{ active: selected == logo.id }"
+              v-for="(logo, id) in repoImages"
+              @click="selectItem(id)"
+              v-bind:key="id"
+              :class="{ active: id == activeItem }"
             />
           </div>
         </div>
@@ -43,20 +43,18 @@ export default {
     return {
       selectedLogo: "",
       selected: null,
+      activeItem: null,
       repoImages: [],
       toolLogos: [
         {
-          id: 1,
           logoImage: require("@/assets/images/utils/logos/vuejs.svg"),
           active: false
         },
         {
-          id: 2,
           logoImage: require("@/assets/images/utils/logos/react.svg"),
           active: false
         },
         {
-          id: 3,
           logoImage: require("@/assets/images/utils/logos/angular.svg"),
           active: false
         }
@@ -64,8 +62,8 @@ export default {
     };
   },
   methods: {
-    handleSelectItem(logo) {
-      this.selectedLogo = logo.logoImage;
+    selectItem(id) {
+      this.activeItem = id;
     },
     imageSearch() {
       const axios = require("axios");
