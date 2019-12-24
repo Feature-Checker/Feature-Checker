@@ -234,12 +234,12 @@ section.add-tool {
             }
             &:hover {
               padding: 10px 15px;
-              background: rgba(255, 255, 255, 0.1);
+              background: rgba(255, 255, 255, 0.2);
               border-radius: 10px;
             }
             &:active {
               padding: 10px 15px;
-              background: rgba(255, 255, 255, 0.45);
+              background: rgba(255, 255, 255, 0.1);
               border-radius: 10px;
             }
           }
