@@ -1,11 +1,19 @@
 const imageSearch = require("image-search-google");
+const fs = require("fs");
+const path = require("path");
+const axios = require("axios");
 
 const fetchImage = async(req, res) => {
     try {
         const searchPhrase = `${req.query.search} logo`
-        const { API_KEY, CSE_ID } = process.env.API_KEY_GOOGLE;
+        const {
+            API_KEY,
+            CSE_ID
+        } = process.env.API_KEY_GOOGLE;
         const client = new imageSearch(CSE_ID, API_KEY);
-        const options = { page: 1 };
+        const options = {
+            page: 1
+        };
         const searchResult = await client.search(searchPhrase, options)
         res.json(searchResult)
     } catch (err) {
@@ -13,6 +21,27 @@ const fetchImage = async(req, res) => {
     }
 }
 
+const saveImage = async(req, res) => {
+    const url = req.query.url;
+    const name = req.query.name;
+    const rootPath = path.dirname(require.main.filename || process.mainModule.filename);
+    !fs.existsSync(`${rootPath}/logos`) && fs.mkdirSync(`${rootPath}/logos`);
+    const filePath = path.resolve(rootPath, 'logos', `${name}`);
+    const writer = fs.createWriteStream(filePath);
+    try {
+        const icon = await axios({
+            url,
+            method: 'GET',
+            responseType: 'stream'
+        })
+        await icon.data.pipe(writer);
+        await res.send(icon.data)
+    } catch (err) {
+        await res.sendStatus(404);
+    }
+};
+
 module.exports = {
-    fetchImage
+    fetchImage,
+    saveImage
 }
