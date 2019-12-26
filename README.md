@@ -31,6 +31,8 @@ push to test branch
 push to master branch
 ```
 
+#### SECRETS
+
 | SECRET          | DESCRIPTION                                                       |
 | --------------- | ----------------------------------------------------------------- |
 | GH_PAT          | Github Access Token - using in actions to get an access to GitHub |

@@ -25,7 +25,10 @@
     },
     "contactForm": {
       "title": "Would you like to tell us something?",
-      "subTitle": "Send us your ideas and opinions!"
+      "subTitle": "Send us your ideas and opinions!",
+      "nameForm": "Name",
+      "titleForm": "Title",
+      "messageForm": "Message"
     }
   },
   "addTool-page": {
@@ -37,6 +40,15 @@
     "errorSubTitle": "Page not found",
     "errorAction": "We’re sorry, the page you have looked for does not exist in our database! Click the button and comeback to Our home page",
     "button": "Comeback"
+  },
+  "development": {
+    "frontend": {
+      "title": "What is it?",
+      "titleContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequatur reprehenderit non provident aperiam similique quibusdam cumque id perspiciatis ratione obcaecati ipsum fuga minus ad, eius velit neque molestias nulla nostrum corporis voluptatum. Praesentium facere eveniet sequi odit dignissimos saepe temporibus dicta cum soluta est. Accusantium, esse ad? Nobis, aliquid.",
+      "popular-technology": {
+        "title": "Most popular technology"
+      }
+    }
   },
   "menu#1": "Home",
   "menu#2": "About",

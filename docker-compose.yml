@@ -6,12 +6,12 @@ services:
     command: node src/server.js
     container_name: PROD_api
     environment:
-      - PORT=4001
+      - PORT=4000
       - VIRTUAL_HOST=2000
       - API_KEY_GOOGLE=${API_KEY_GOOGLE}
       - CSE_ID_GOOGLE=${CSE_ID_GOOGLE}
     ports:
-      - 4001:4000
+      - 4000:4000
     restart: always
     volumes:
       - ./server/src:/app/server/src

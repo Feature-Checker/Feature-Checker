@@ -18,7 +18,7 @@ $h2: 2.6rem;
 $h3: 2.2rem;
 $h4: 2rem;
 $h5: 1.8rem;
-$button: 1.5em;
+$button: 1.4em;
 span,
 p {
   font-size: $text-size;
@@ -55,4 +55,8 @@ h5 {
 
 a.btn {
   font-size: $button;
+}
+
+a {
+  text-decoration: none;
 }

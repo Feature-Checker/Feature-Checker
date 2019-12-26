@@ -5,11 +5,11 @@
         <h2>{{ $t("landingContent.contactForm.title") }}</h2>
         <h4>{{ $t("landingContent.contactForm.subTitle") }}</h4>
       </div>
-      <form action>
+      <form>
         <div class="form-box boxShadow">
           <div class="contact-info">
             <label for>
-              Name
+              {{$t("landingContent.contactForm.nameForm")}}
               <input type="text" />
               <i class="fas fa-user"></i>
             </label>
@@ -21,16 +21,16 @@
           </div>
           <div class="message-info">
             <label for>
-              Title
+              {{$t("landingContent.contactForm.titleForm")}}
               <input type="text" />
               <i class="fas fa-pen-fancy"></i>
             </label>
             <label for class="textarea">
-              Message
+              {{$t("landingContent.contactForm.messageForm")}}
               <textarea></textarea>
               <i class="fas fa-comment-alt"></i>
             </label>
-            <button class="btn purple">
+            <button type="button" class="btn purple">
               <i class="fas fa-paper-plane"></i>
             </button>
           </div>
@@ -92,11 +92,32 @@ export default {};
             position: relative;
             padding-left: 5px;
             outline: none;
+            padding-right: 30px;
             &:focus {
               & + svg {
                 color: $purpleMedium;
               }
             }
+            &::-webkit-scrollbar {
+              width: 5px;
+            }
+            &::-webkit-scrollbar-track {
+              background: $navy;
+              border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: #a4508b;
+              background-image: linear-gradient(
+                326deg,
+                $purpleHeart 0%,
+                $purpleMedium 74%
+              );
+              border-radius: 5px;
+              box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+            }
+          }
+          input {
+            padding-right: 30px;
           }
           svg {
             transition: 0.2s;

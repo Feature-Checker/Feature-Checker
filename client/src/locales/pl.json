@@ -25,7 +25,10 @@
     },
     "contactForm": {
       "title": "Chciałbyś nam coś powiedzieć?",
-      "subTitle": "Wyślij nam swoje pomysły i opinie!"
+      "subTitle": "Wyślij nam swoje pomysły i opinie!",
+      "nameForm": "Imię",
+      "titleForm": "Tytuł",
+      "messageForm": "Wiadomość"
     }
   },
   "addTool-page": {
@@ -37,6 +40,15 @@
     "errorSubTitle": "Strony nie znaleziono",
     "errorAction": "Przepraszamy, strona której szukasz nie istnieje w naszej bazie danych! Kliknij przycisk i wróć do naszej strony głównej",
     "button": "Powrót"
+  },
+  "development": {
+    "frontend": {
+      "title": "Co to jest?",
+      "titleContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequatur reprehenderit non provident aperiam similique quibusdam cumque id perspiciatis ratione obcaecati ipsum fuga minus ad, eius velit neque molestias nulla nostrum corporis voluptatum. Praesentium facere eveniet sequi odit dignissimos saepe temporibus dicta cum soluta est. Accusantium, esse ad? Nobis, aliquid.",
+      "popular-technology": {
+        "title": "Najpopularniejsze technologie"
+      }
+    }
   },
   "menu#1": "Strona Główna",
   "menu#2": "O Nas",

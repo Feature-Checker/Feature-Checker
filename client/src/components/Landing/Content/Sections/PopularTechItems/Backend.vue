@@ -24,9 +24,9 @@
           <img :src="item.image" alt="" />
           <p>{{ item.title }}</p>
           <span>{{ item.description }}</span>
-          <button class="btn purple">
+          <a class="btn purple">
             {{ $t("buttonCheck") }}
-          </button>
+          </a>
         </div>
       </carousel>
     </div>

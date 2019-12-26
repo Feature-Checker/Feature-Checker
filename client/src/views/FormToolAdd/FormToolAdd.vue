@@ -1,25 +1,27 @@
 <template>
   <section class="add-tool">
-    <div class="form-box">
-      <form action>
+    <div class="form-box wrapper">
+      <form action onSubmit="return false;">
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
-        <input type="text" id="startAnimation" v-on:keyup.once="typingAnimation" />
-        <div class="lds-ring" id="lds-ring">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <input type="text" id="startAnimation" @keyup.enter="searchValidation()" />
+        <div class="button-box">
+          <button type="button" class="btn purple" @click=" searchValidation()">
+            <i class="fas fa-search"></i>
+          </button>
+          <button type="button" class="btn hit-pink" @click=" clearRepo()">
+            <i class="fas fa-trash-alt"></i>
+          </button>
         </div>
         <div class="logo-container">
           <p>{{$t("addTool-page.logoTitle")}}</p>
           <div class="logos">
             <img
               alt
-              :src="logo.logoImage"
-              v-for="logo in toolLogos"
-              @click="handleSelectItem(logo)"
-              v-bind:key="logo.id"
-              :class="{ active: selected == logo.id }"
+              :src="logo"
+              v-for="(logo, id) in repoImages"
+              @click="selectItem(id)"
+              v-bind:key="id"
+              :class="{ active: id == activeItem }"
             />
           </div>
         </div>
@@ -33,51 +35,88 @@
 export default {
   data() {
     return {
-      selectedLogo: "",
       selected: null,
-      toolLogos: [
-        {
-          id: 1,
-          logoImage: require("@/assets/images/utils/logos/vuejs.svg"),
-          active: false
-        },
-        {
-          id: 2,
-          logoImage: require("@/assets/images/utils/logos/react.svg"),
-          active: false
-        },
-        {
-          id: 3,
-          logoImage: require("@/assets/images/utils/logos/angular.svg"),
-          active: false
-        }
-      ]
+      activeItem: null,
+      repoImages: []
     };
   },
   methods: {
-    handleSelectItem(logo) {
-      this.selectedLogo = logo.logoImage;
-      this.selected = logo.id;
+    selectItem(id) {
+      this.activeItem = id;
     },
-    typingAnimation() {
+    imageSearch() {
+      const axios = require("axios");
       const input = document.getElementById("startAnimation");
-      const animationDiv = document.querySelector("#lds-ring");
-      input.addEventListener("keyup", function() {
-        if (input.value !== "") {
-          animationDiv.classList.add("activeAnimation");
-          input.classList.add("searchError");
-        } else {
-          animationDiv.classList.remove("activeAnimation");
+      const isUrlValid = async () => {
+        try {
+          if ([...input.value].filter(sign => sign === "/").length > 0) {
+            const [owner, reponame] = input.value.split("/");
+            input.value = `${owner}/${reponame}`;
+          } else {
+            throw { isValid: false };
+          }
+          const result = await axios.get("/api/image", {
+            params: {
+              search: input.value
+            }
+          });
+
+          this.repoImages = [];
+          this.activeItem = null;
+
+          for (let i = 0; i < result.data.length; i++) {
+            this.repoImages.push(result.data[i].url);
+            this.selected = result.data[i].id;
+          }
+
+          return true;
+        } catch (err) {
+          console.log(err);
+          return false;
         }
-        if (input.value === "facebook/react") {
-          input.classList.add("searchSuccess");
-          input.classList.remove("searchError");
-          animationDiv.classList.remove("activeAnimation");
-        } else if (input.value === "") {
-          input.classList.remove("searchSuccess");
-          input.classList.remove("searchError");
+      };
+      isUrlValid();
+    },
+    searchValidation() {
+      const axios = require("axios");
+      const input = document.getElementById("startAnimation");
+      const isUrlValid = async () => {
+        try {
+          if ([...input.value].filter(sign => sign === "/").length > 0) {
+            const [owner, reponame] = input.value.split("/");
+            input.value = `${owner}/${reponame}`;
+          } else {
+            throw { isValid: false };
+          }
+          const result = await axios.get("/api/searchrepo", {
+            params: {
+              reponame: input.value
+            }
+          });
+          // console.log(result.data.i
+          if (result.data.isValid) {
+            input.classList.add("searchSuccess");
+            input.classList.remove("searchError");
+            this.imageSearch();
+          } else {
+            input.classList.remove("searchSuccess");
+            input.classList.add("searchError");
+          }
+
+          return true;
+        } catch (err) {
+          console.log(err);
+          return false;
         }
-      });
+      };
+      isUrlValid();
+    },
+    clearRepo() {
+      const input = document.getElementById("startAnimation");
+      input.value = "";
+      this.repoImages = [];
+      input.classList.remove("searchSuccess");
+      input.classList.remove("searchError");
     }
   },
   created() {
@@ -89,13 +128,17 @@ export default {
 <style lang="scss">
 section.add-tool {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: $navy;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 100px;
+  @include max-dv($md - 1) {
+    padding-top: 200px;
+  }
   .form-box {
-    width: 30%;
+    width: 100%;
     @include max-dv($md) {
       width: 80%;
     }
@@ -107,6 +150,9 @@ section.add-tool {
     }
     @include ipad(prol) {
       width: 60%;
+    }
+    @include land-sm {
+      margin-top: 150px;
     }
     form {
       display: flex;
@@ -134,8 +180,18 @@ section.add-tool {
           border-bottom: 2px solid red;
         }
       }
+      .button-box {
+        display: flex;
+        justify-content: center;
+        button {
+          margin: 0 30px;
+          svg {
+            font-size: 1.6em;
+          }
+        }
+      }
       button {
-        margin: 20px auto;
+        margin: 0 auto;
       }
       .logo-container {
         margin: 50px 0;
@@ -150,13 +206,14 @@ section.add-tool {
           width: 100%;
           flex-wrap: wrap;
           img {
-            width: 15%;
+            width: 100px;
+            height: 100%;
             margin: 10px 10px;
             padding: 10px 15px;
             cursor: pointer;
             transition: 0.2s;
             @include max-dv($md) {
-              width: 20%;
+              width: 48%;
               margin: 3px;
             }
             @include ipad(ipadp) {
@@ -168,60 +225,27 @@ section.add-tool {
               margin: 3px;
             }
             @include ipad(prol) {
-              width: 10%;
+              width: 15%;
             }
             &.active {
               padding: 10px 15px;
               background: rgba(255, 255, 255, 0.3);
               border-radius: 10px;
             }
+            &:hover {
+              padding: 10px 15px;
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+            }
+            &:active {
+              padding: 10px 15px;
+              background: rgba(255, 255, 255, 0.1);
+              border-radius: 10px;
+            }
           }
         }
       }
     }
-  }
-}
-
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 35px;
-  right: 15px;
-  display: none;
-  &.activeAnimation {
-    display: block;
-  }
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  margin: 8px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
-}
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 </style>

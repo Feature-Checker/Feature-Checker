@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="landing-footer">
     <div class="wrapper">
       <div class="footer-box">
         <!-- <div class="footer-stats">
@@ -13,30 +13,34 @@
           </div>
         </div>-->
         <div class="footer-brand">
-          <router-link :to="{name: 'home'}">
-            <img src="@/assets/images/logo/dev-logo-white.svg" alt />
-            <router-link :to="{name: 'addTool'}">
-              <span>{{ appVersion }}</span>
-            </router-link>
+          <module-logo />
+          <router-link :to="{ name: 'addTool' }">
+            <span>{{ appVersion }}</span>
           </router-link>
         </div>
         <div class="footer-nav">
           <nav class="footer-item">
             <h3>Frontend</h3>
             <ul>
-              <li v-for="item in frontendItems" :key="item.title">{{ item.title }}</li>
+              <li v-for="item in frontendItems" :key="item.title">
+                {{ item.title }}
+              </li>
             </ul>
           </nav>
           <nav class="footer-item">
             <h3>Backend</h3>
             <ul>
-              <li v-for="item in backendItems" :key="item.title">{{ item.title }}</li>
+              <li v-for="item in backendItems" :key="item.title">
+                {{ item.title }}
+              </li>
             </ul>
           </nav>
           <nav class="footer-item">
             <h3>Design</h3>
             <ul>
-              <li v-for="item in designItems" :key="item.title">{{ item.title }}</li>
+              <li v-for="item in designItems" :key="item.title">
+                {{ item.title }}
+              </li>
             </ul>
           </nav>
         </div>
@@ -46,7 +50,11 @@
 </template>
 
 <script>
+import Logo from "@/views/Globals/Logo.vue";
 export default {
+  components: {
+    "module-logo": Logo
+  },
   data() {
     return {
       appVersion: "0.0.1",
@@ -108,13 +116,8 @@ export default {
 </script>
 
 <style lang="scss">
-footer {
-  background: rgb(207, 83, 249);
-  background: linear-gradient(
-    45deg,
-    rgba(207, 83, 249, 1) 0%,
-    rgba(87, 64, 252, 1) 100%
-  );
+footer.landing-footer {
+  background: $clay;
   margin-top: 100px;
   padding: 30px 0;
   height: fit-content;
@@ -137,11 +140,6 @@ footer {
       margin: 0 auto;
       @include min-dv($lg) {
         margin: 0;
-      }
-      img {
-        width: 200px;
-        display: block;
-        margin: 0 auto;
       }
       span {
         font-size: 1.2em;
