@@ -2,16 +2,19 @@ const express = require('express')
 const repositoryRoute = require('./routes/repository')
 const imageRoute = require('./routes/repo-image')
 const searchRepoRoute = require('./routes/search-repo')
-const db = require('./services/db')
-const middleware = require('./services/middleware')
+const { connect } = require('./services/db')
+const { use } = require('./services/middleware')
 
 const port = 4000;
-console.log(process.env)
+// console.log(process.env)
 const app = express()
-middleware.use(app)
-db.connect()
+use(app)
+connect()
 
 app.use('/repositories', repositoryRoute)
 app.use('/image', imageRoute)
 app.use('/searchrepo', searchRepoRoute)
-app.listen(port, () => console.log(`Listening on port ${port}`));
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(port, () => console.log(`Listening on port ${port}`));
+}
+module.exports = app

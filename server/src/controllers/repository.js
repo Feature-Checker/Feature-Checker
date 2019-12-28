@@ -1,22 +1,20 @@
 const Repository = require('../models/repository')
 
-const createNew = async(req, res) => {
+const createNew = async (req, res) => {
     try {
         const repository = await new Repository({
             name: req.body.name,
             icon: req.body.icon
         })
-        await repository.save()
-        await res.send(req.file);
-        res.json({
-            message: 'repository created and icon added'
-        })
+        const result = await repository.save()
+        // await res.send(req.file);
+        res.json(result)
     } catch (err) {
         res.send(err)
     }
 }
 
-const getAll = async(req, res) => {
+const getAll = async (req, res) => {
     try {
         const repositories = await Repository.find()
         res.json(repositories)
@@ -25,7 +23,7 @@ const getAll = async(req, res) => {
     }
 }
 
-const getOne = async(req, res) => {
+const getOne = async (req, res) => {
     try {
         const repository = await Repository.findById(req.params.test_id)
         res.json(repository)
@@ -34,7 +32,7 @@ const getOne = async(req, res) => {
     }
 }
 
-const updateOne = async(req, res) => {
+const updateOne = async (req, res) => {
     try {
         const repository = await Repository.findByIdAndUpdate(req.params.test_id, {
             name: req.body.name
@@ -48,7 +46,7 @@ const updateOne = async(req, res) => {
     }
 }
 
-const deleteOne = async(req, res) => {
+const deleteOne = async (req, res) => {
     try {
         await Repository.remove({
             _id: req.params.test_id

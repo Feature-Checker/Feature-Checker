@@ -1,5 +1,12 @@
 {
   "scripts": {
-    "prod": "docker-compose up -d --build"
+    "prod": "docker-compose up -d --build",
+    "test": "cross-env NODE_ENV=test jest --forceExit"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "jest": "^24.9.0",
+    "mongoose": "^5.8.3",
+    "supertest": "^4.0.2"
   }
 }

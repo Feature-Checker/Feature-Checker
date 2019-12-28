@@ -24,3 +24,5 @@ yarn-error.log*
 *.sw?
 nginx/*.pem
 client/*.pem
+coverage
+package-lock.json
