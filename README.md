@@ -55,4 +55,3 @@ push to master branch
 | /repositories/:repository_id  | DELETE    | PARAMS: TEST_ID           | Get one record from database by ID and delete it |
 | /image                        | GET       | QUERY: SEARCH             | Send request to Google API's Search to get images from repository |
 | /image                        | POST      | QUERY: URL; QUERY: NAME   | Save repository icon on server in ROOT/logos directory using url and name |
-
