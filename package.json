@@ -8,5 +8,8 @@
     "jest": "^24.9.0",
     "mongoose": "^5.8.3",
     "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
   }
 }
