@@ -19,6 +19,12 @@ PROD https://dev-release.com
 TEST https://dev-release.com:70
 ```
 
+#### LINK TO MANUAL REBUILD
+
+```
+http://dev-release.com:4000/plans/rebuildprod
+```
+
 #### TO UPDATE TEST ENVIRONMENT
 
 ```javascript
