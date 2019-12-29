@@ -21,5 +21,6 @@ jobs:
           script: |
             cd /home/github
             git pull origin master
+            npm i
             docker-compose down -v
             API_KEY_GOOGLE=${{ secrets.API_KEY_GOOGLE }} CSE_ID_GOOGLE=${{ secrets.CSE_ID_GOOGLE }} docker-compose up --build -d
