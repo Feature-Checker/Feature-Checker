@@ -8,10 +8,7 @@ router.route('/rebuildprod').get(async (req, res) => {
         res.send('GITHUB TOKEN not found')
     } else {
         const body = {
-            "event_type": "rebuildprod",
-            "client_payload": {
-                "text": "Rebuilding production"
-            }
+            "event_type": "rebuildprod"
         }
         const options = {
             headers: {
