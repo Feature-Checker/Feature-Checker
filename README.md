@@ -15,14 +15,13 @@ yarn start
 #### DEMO
 
 ```javascript
-PROD https://dev-release.com
-TEST https://dev-release.com:70
+PROD [https://dev-release.com](https://dev-release.com)
 ```
 
 #### LINK TO MANUAL REBUILD
 
 ```
-http://dev-release.com:4000/plans/rebuildprod
+[https://dev-release.herokuapp.com/plans/rebuildprod](https://dev-release.herokuapp.com/plans/rebuildprod)
 ```
 
 #### TO UPDATE TEST ENVIRONMENT
