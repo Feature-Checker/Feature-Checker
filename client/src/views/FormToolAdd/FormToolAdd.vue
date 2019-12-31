@@ -42,7 +42,9 @@ export default {
   },
   methods: {
     selectItem(id) {
-      if (this.activeItem !== null) {
+      if (this.activeItem !== id) {
+        this.activeItem = id;
+      } else if (this.activeItem !== null) {
         this.activeItem = null;
       } else {
         this.activeItem = id;
