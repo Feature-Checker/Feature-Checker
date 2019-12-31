@@ -17,8 +17,8 @@
           <div class="logos">
             <img
               alt
-              :src="logo"
-              v-for="(logo, id) in repoImages"
+              :src="logo.image"
+              v-for="(logo, id) in img"
               @click="selectItem(id)"
               v-bind:key="id"
               :class="{ active: id == activeItem }"
@@ -37,12 +37,21 @@ export default {
     return {
       selected: null,
       activeItem: null,
-      repoImages: []
+      repoImages: [],
+      img: [
+        {
+          image: require("@/assets/images/utils/logos/angular.svg")
+        }
+      ]
     };
   },
   methods: {
     selectItem(id) {
-      this.activeItem = id;
+      if (this.activeItem !== null) {
+        this.activeItem = null;
+      } else {
+        this.activeItem = id;
+      }
     },
     imageSearch() {
       const axios = require("axios");
