@@ -20,6 +20,10 @@ PROD [https://dev-release.com](https://dev-release.com)
 
 [https://dev-release.herokuapp.com/plans/rebuildprod](https://dev-release.herokuapp.com/plans/rebuildprod)
 
+#### LINK TO MANUAL RUN TESTS
+
+[https://dev-release.herokuapp.com/plans/runtests](https://dev-release.herokuapp.com/plans/runtests)
+
 #### TO UPDATE TEST ENVIRONMENT
 
 ```javascript
