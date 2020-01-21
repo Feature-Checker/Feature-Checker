@@ -2,9 +2,9 @@ const imageSearch = require("image-search-google");
 
 const fetchImage = async(req, res) => {
     try {
-        console.log(req.query)
-        console.log(req.params)
-        console.log(process.env)
+        // console.log(req.query)
+        // console.log(req.params)
+        // console.log(process.env)
         const searchPhrase = `${req.query.search} logo`
         const {
             API_KEY_GOOGLE,
