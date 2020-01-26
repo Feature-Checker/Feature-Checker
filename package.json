@@ -1,7 +1,7 @@
 {
   "scripts": {
     "prod": "docker-compose up -d --build",
-    "test": "cross-env NODE_ENV=test jest --forceExit"
+    "test": "cd server && yarn && cd ../ && cross-env NODE_ENV=test jest --forceExit"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",

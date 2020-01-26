@@ -1,0 +1,20 @@
+name: run tests
+on: 
+  repository_dispatch:
+    types: runtests
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HAYUNA_HOST }}
+          username: ${{ secrets.HAYUNA_USERNAME }}
+          password: ${{ secrets.HAYUNA_PASSWORD }}
+          port: ${{ secrets.HAYUNA_PORT }}
+          timeout: 30m
+          command_timeout: 60m  
+          script: |
+            cd /home/github
+            npm run test
