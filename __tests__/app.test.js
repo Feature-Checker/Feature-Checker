@@ -37,7 +37,6 @@ describe("/repositories Endpoints", () => {
     });
     it("respond with 200 to POST method", async done => {
         const res = await request(app).post("/repositories");
-
         expect(res.status).toBe(200);
         done();
     });
