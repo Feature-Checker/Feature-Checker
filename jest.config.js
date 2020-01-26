@@ -4,7 +4,8 @@ module.exports = {
     collectCoverage: true,
     testPathIgnorePatterns: [
         "/__tests__/utils.js",
-        "/node_modules/"
+        "/node_modules/",
+        "/client/"
     ],
     roots: [
         "__tests__/"
